@@ -1,0 +1,13 @@
+tag=0x50
+component_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	reserved_future_use 4 bslbf
+	stream_content 4 uimsbf
+	component_type 8 uimsbf
+	component_tag 8 uimsbf
+	ISO_639_language_code 24 bslbf
+	for (i=0;i<N;i++){
+		text 8 uimsbf
+	}
+}

@@ -1,0 +1,12 @@
+tag=0xff
+plugin_application_descriptor() {
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	application_type 16 uimsbf
+	for( i=0; i<N; i++ )/*application_profiles*/{
+		application_profile 16 uimsbf
+		version_major 8 uimsbf
+		version_minor 8 uimsbf
+		version_micro 8 uimsbf
+	}
+}

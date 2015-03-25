@@ -1,0 +1,36 @@
+service_guide_section(){
+	table_id 8 uimsbf
+	section_syntax_indicator 1 bslbf
+	reserved_future_use 1 bslbf
+	reserved 2 bslbf
+	section_length 12 uimsbf
+	service_list_id 16 uimsbf
+	reserved 2 bslbf
+	version_number 5 uimsbf
+	current_next_indicator 1 bslbf
+	section_number 8 uimsbf
+	last_section_number 8 uimsbf
+	reserved 16 bslbf
+	reserved_future_use 4 bslbf
+	service_list_descriptors_length 12 uimsbf
+	for(i=0;i<N;i++){
+		descriptor()
+	}
+	reserved_future_use 4 bslbf
+	service_loop_length 12 uimsbf
+	for(j=0;j<service_loop_length;j++)/*services*/{
+		service_id 16 uimsbf
+		transport_stream_id 16 uimsbf
+		original_network_id 16 uimsbf
+		logical_channel_number 14 uimsbf
+		visible_service_flag 1 bslbf
+		new_service_flag 1 bslbf
+		genre_code 16 uimsbf
+		reserved_future_use 4 bslbf
+		service_descriptors_length 12 uimsbf
+		for(k=0;k<L;k++){
+			descriptor()
+		}
+	}
+	CRC_32 32 rpchof
+}

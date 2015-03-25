@@ -1,0 +1,16 @@
+tag=0x79
+S2_satellite_delivery_system_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	scrambling_sequence_selector 1 bslbf
+	multiple_input_stream_flag 1 bslbf
+	backwards_compatibility_indicator 1 bslbf
+	reserved_future_use 5 bslbf
+	if (scrambling_sequence_selector == 1){
+		Reserved 6 bslbf
+		scrambling_sequence_index 18 uimsbf
+	}
+	if (multiple_input_stream_flag == 1){
+		input_stream_identifier 8 uimsbf
+	}
+}

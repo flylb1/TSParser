@@ -1,0 +1,29 @@
+FST_section(){			
+	table_id	8	uimsbf
+	section_syntax_indicator	1	bslbf
+	reserved	1	bslbf
+	ISO_reserved	2	bslbf
+	section_length	12	uimsbf
+	operator_network_id	16	uimsbf
+	reserved	2	bslbf
+	version_number	5	uimsbf
+	current_next_indicator	1	bslbf
+	section_number	8	uimsbf
+	last_section_number	8	uimsbf
+	for (i=0;i<N;i++)/*services*/{
+		original_network_id	16	uimsbf	
+		transport_stream_id	16	uimsbf	
+		service_id	16	uimsbf
+		default_video_PID	16	uimsbf
+		default_audio_PID	16	uimsbf
+		default_video_ECM_PID	16		uimsbf
+		default_audio_ECM_PID	16		uimsbf
+		default_PCR_PID	16		uimsbf
+		reserved	4		uimsbf
+		descriptor_loop_length	12 uimsbf
+		for(i=0;i<N;i++){
+			descriptor()
+		}
+	}
+	CRC_32	32	rpchof
+}

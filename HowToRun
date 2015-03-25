@@ -1,0 +1,10 @@
+1 From source
+	TODO
+	
+
+1 From Dist
+windows startup.bat
+linux/OSX ./startup.sh
+
+using browse visitor
+	http://localhost:8080/TSP

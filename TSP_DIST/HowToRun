@@ -1,0 +1,13 @@
+1 From source
+	TODO
+	
+
+1 From Dist
+jre 1.6 is required.
+
+windows execute startup.bat
+
+linux/OSX ./startup.sh
+
+using browser visitor
+	http://localhost:8080/TSP

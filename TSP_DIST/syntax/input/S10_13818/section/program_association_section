@@ -1,0 +1,26 @@
+program_association_section () {
+	table_id 8 uimsbf
+	section_syntax_indicator 1 bslbf
+	noused 1 bslbf
+	reserved 2 bslbf
+	section_length 12 uimsbf
+	transport_stream_id 16 uimsbf
+	reserved 2 bslbf
+	version_number 5 uimsbf
+	current_next_indicator 1 bslbf
+	section_number 8 uimsbf
+	last_section_number 8 uimsbf
+	
+	for (i=0; i<N;i++)/*programs*/ {
+		program_number 16 uimsbf 
+		reserved 3 bslbf
+		if(program_number == 0x0) {
+			network_PID 13 uimsbf
+		}
+		else {
+			program_map_PID 13 uimsbf
+		}
+	}
+	
+	CRC_32 32 rpchof
+}

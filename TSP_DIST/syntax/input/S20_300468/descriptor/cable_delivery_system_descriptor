@@ -1,0 +1,11 @@
+tag=0x44
+cable_delivery_system_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	frequency 32 bslbf
+	reserved_future_use 12 bslbf
+	FEC_outer 4 bslbf
+	modulation 8 bslbf
+	symbol_rate 28 bslbf
+	FEC_inner 4 bslbf
+}
