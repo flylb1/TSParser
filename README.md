@@ -20,7 +20,7 @@ TSParser has the ability to modify the Section & Descriptor syntax at runtime.
 Change the syntax makes analysis results at the same time change.
 Syntax file locate: %INSTALL_DIR%\syntax, User can modify these syntax files outside system.
 
-We already ingrated bellow SPEC,The main job is to copy syntax from SPEC and paste it into the system
+We already integrated bellow SPEC,The main job is to copy syntax from SPEC and paste it into the system
   * 13818
   * 300468
   * 102809
@@ -44,7 +44,17 @@ For a special section we have 3 methods to view the section/descriptor data.
 
 
 #### Export SI/SPI data to file
+Usually, the size of bitstream is very large, using tool we can export only the SI/SPI data,the size is small because AV data is ignored. It's very usefull at field try.
+
 #### Support 3rd add new application in java 
+User can write 3rd application in java, please using Java1.5 style. 3rd Application Locate %INSTALL_DIR%/3rd/src. When system startup these applications will be auto registered into system. 
+
+There are 3 build-in applications in system
+* Service List application base on SDT(Show service list )
+* EPG Application base on EIT (show EPG)
+* Demo Application (simple demo)
+
+
 ####  
 
 
