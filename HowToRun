@@ -1,10 +1,50 @@
-### From source
-	TODO
-	
+1 Run From Source
 
-### From Dist
-windows startup.bat
-linux/OSX ./startup.sh
+1.1 Install eclipse RAP IDE
+Download eclipse from "http://www.eclipse.org/downloads/"
+please choice "Eclipse for RCP and RAP Developers"
+after eclipse download,Enter Help->Welcome,choice "Install Target Platform"
+wait for Target Platform install finish.
 
-using browse visitor
-	http://localhost:8080/TSP
+1.2 Import TSParser project 
+File->import...->General->Existing projects into workspace.
+
+1.3 Run
+Open plugin.xml, in overview table choice "launch a RAP application"
+the first time program will throw exception,please stop it.
+Please Menu->Run->Configurations...
+select RAP Application->TSP Application
+
+On Main table
+	Uncheck 		“Open application in”,
+	Servlet path: 	“/TSP”
+	Checked 		“use a fixed port:” value is 9090
+	Unchecked 		“Context path”
+	Checked 		“Start in development”
+	Check 			“Use default location”
+	Uncheck 		“Clear the instance area before location”
+
+On Bundles table
+	Unchecked all “org.eclipse.rap.demo.*”
+	Unchecked all “org.eclipse.rap.examples.*”
+
+On Arguments table
+	Program arguments: “-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console”
+	VM arguments     : “-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.eclipse.jetty.server.Request.maxFormKeys=10000”
+	working directory select other,value is “${workspace_loc:TSP_RAP}”
+
+Other table remain default.
+
+click Apply ,click Run
+Console output:
+“osgi> com.flylb.rap  Current Directory:/xxxxt/TSParser/.”
+that mean program running.
+
+Using browse visitor "http://localhost:9090/TSP"
+
+
+2 From Dist
+Run startup.bat or startup.sh base on your OS
+
+When you see console output "AbstractConnector:Started SelectChannelConnector@0.0.0.0:8080"
+That mean program started, using browse visitor "http://localhost:8080/TSP"
