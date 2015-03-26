@@ -1,8 +1,8 @@
-1 From source
+### From source
 	TODO
 	
 
-1 From Dist
+### From Dist
 windows startup.bat
 linux/OSX ./startup.sh
 
