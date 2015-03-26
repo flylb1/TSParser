@@ -55,14 +55,15 @@ There are 3 build-in applications in system
 * Demo Application (simple demo)
 
 
-####  
+###3 Run
+Please see HowToRun for detail
 
 
-###3 LICENSE
+###4 LICENSE
 TSParser is licensed under the [Apache 2 License](http://www.apache.org/licenses/LICENSE-2.0.html), meaning you
 can use it free of charge, without strings attached in commercial and non-commercial projects. 
 
-###4 Explanation
+###5 Explanation
 Most of the code is open source except for Lexer and parser part.
 These parts was compiled in tsp_core.jar.
 
