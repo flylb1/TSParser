@@ -8,16 +8,17 @@ wait for Target Platform install finish.
 
 1.2 Import TSParser project 
 File->import...->General->Existing projects into workspace.
+select directory of TSParser
 
 1.3 Run
-Open plugin.xml, in overview table choice "launch a RAP application"
+Open plugin.xml, in overview table choice "launch a RAP application",
 the first time program will throw exception,please stop it.
 Please Menu->Run->Configurations...
 select RAP Application->TSP Application
 
 On Main table
 	Uncheck 		“Open application in”,
-	Servlet path: 	“/TSP”
+	Servlet path: 		“/TSP”
 	Checked 		“use a fixed port:” value is 9090
 	Unchecked 		“Context path”
 	Checked 		“Start in development”
