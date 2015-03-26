@@ -31,6 +31,12 @@ We already ingrated bellow SPEC,The main job is to copy syntax from SPEC and pas
 
 
 #### Dynamic load Section/Descriptor 
+We have Lexer and Parser, which can help us to recognize the Section/Descriptor scripts.(Thanks [Antlr](http://www.antlr.org/))
+
+We translate the script into java source code , compile java code to byte code, dynamic load byte code into JVM at runtime. (Thanks [Janino](http://docs.codehaus.org/display/JANINO/Home))
+
+
+
 #### Friendly presentation of Section/Descriptor 
 #### Export SI/SPI data to file
 #### Support 3rd add new application in java 
