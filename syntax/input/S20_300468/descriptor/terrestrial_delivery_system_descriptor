@@ -1,0 +1,19 @@
+tag=0x5a
+terrestrial_delivery_system_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	centre_frequency 32 uimsbf
+	bandwidth 3 bslbf
+	priority 1 bslbf
+	Time_Slicing_indicator 1 bslbf
+	MPE-FEC_indicator 1 bslbf
+	reserved_future_use 2 bslbf
+	constellation 2 bslbf
+	hierarchy_information 3 bslbf
+	code_rate-HP_stream 3 bslbf
+	code_rate-LP_stream 3 bslbf
+	guard_interval 2 bslbf
+	transmission_mode 2 bslbf
+	other_frequency_flag 1 bslbf
+	reserved_future_use 32 bslbf
+}

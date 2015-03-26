@@ -1,0 +1,7 @@
+tag=0x69
+PDC_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	reserved_future_use 4 bslbf
+	programme_identification_label 20 bslbf
+}

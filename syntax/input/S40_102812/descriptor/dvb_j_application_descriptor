@@ -1,0 +1,11 @@
+tag=0x3
+dvb_j_application_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	for(i=0; i<N; i++) /*parameters*/{
+		parameter_length 8 uimsbf
+		for(j=0; j<parameter_length; j++) {
+			parameter_byte 8 uimsbf
+		}
+	}
+}

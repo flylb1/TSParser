@@ -1,0 +1,13 @@
+tag=0x4
+hierarchy_descriptor() {
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	reserved 4 bslbf
+	hierarchy_type 4 uimsbf
+	reserved 2 bslbf
+	hierarchy_layer_index 6 uimsbf
+	reserved 2 bslbf
+	hierarchy_embedded_layer_index 6 uimsbf
+	reserved 2 bslbf
+	hierarchy_channel 6 uimsbf
+}

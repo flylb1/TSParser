@@ -1,0 +1,16 @@
+tag=0x2
+video_stream_descriptor(){
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	multiple_frame_rate_flag 1 bslbf
+	frame_rate_code 4 uimsbf
+	MPEG_1_only_flag 1 bslbf
+	constrained_parameter_flag 1 bslbf
+	still_picture_flag 1 bslbf
+	if (MPEG_1_only_flag == 1){
+		profile_and_level_indication 8 uimsbf
+		chroma_format 2 uimsbf
+		frame_rate_extension_flag 1 bslbf
+		reserved 5 bslbf
+	}
+}

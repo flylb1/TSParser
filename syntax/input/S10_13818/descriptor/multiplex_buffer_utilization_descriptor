@@ -1,0 +1,9 @@
+tag=0xC
+multiplex_buffer_utilization_descriptor() {
+	descriptor_tag 8 uimsbf
+	descriptor_length 8 uimsbf
+	bound_valid_flag 1 bslbf
+	LTW_offset_lower_bound 15 uimsbf
+	reserved 1 bslbf
+	LTW_offset_upper_bound 14 uimsbf
+}
