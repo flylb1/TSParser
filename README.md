@@ -35,9 +35,14 @@ We have Lexer and Parser, which can help us to recognize the Section/Descriptor 
 
 We translate the script into java source code , compile java code to byte code, dynamic load byte code into JVM at runtime. (Thanks [Janino](http://docs.codehaus.org/display/JANINO/Home))
 
-
-
 #### Friendly presentation of Section/Descriptor 
+For a special section we have 3 methods to view the section/descriptor data.
+* [Tree view](https://cloud.githubusercontent.com/assets/8717254/6841486/65445c56-d3c6-11e4-99a0-d1c01e6e5db5.png)
+* [Text view](https://cloud.githubusercontent.com/assets/8717254/6841499/98f1e276-d3c6-11e4-9010-7c1e4e81f169.png)
+* [Raw data view](https://cloud.githubusercontent.com/assets/8717254/6841507/b7a141c6-d3c6-11e4-9eb3-342c54311e31.png)
+* [Syntax view](https://cloud.githubusercontent.com/assets/8717254/6841517/d6a27572-d3c6-11e4-90a4-688382fda603.png)
+
+
 #### Export SI/SPI data to file
 #### Support 3rd add new application in java 
 ####  
