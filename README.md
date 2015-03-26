@@ -2,6 +2,8 @@
 ###Introduction
 TSParser is a cross-platform powerful DVB / MPEG stream analyzer program.
 It works on Windows, Linux, Mac OS X.
+[introduce](https://cloud.githubusercontent.com/assets/8717254/6841219/94298906-d3c1-11e4-9fcb-225089ada675.png)
+
 
 ###Features
 #### Web based application
@@ -13,6 +15,21 @@ User can custom Table ID filter for runtime used,User can enabled/disable a spec
 [system_setting_tid](https://cloud.githubusercontent.com/assets/8717254/6841213/61f5b6a8-d3c1-11e4-9db0-484645f1c764.png)
 
 #### Easy add new Secion/Descriptor syntax
+TSParser use Section/Descriptor syntax to parse Section/Descriptor.
+TSParser has the ability to modify the Section & Descriptor syntax at runtime.
+Change the syntax makes analysis results at the same time change.
+Syntax file locate: %INSTALL_DIR%\syntax, User can modify these syntax files outside system.
+
+We already ingrated bellow SPEC,The main job is to copy syntax from SPEC and paste it into the system
+  * 13818
+  * 300468
+  * 102809
+  * 102812
+  * Dbook
+  * 101202
+  * polsat_stb
+
+
 #### Dynamic load Section/Descriptor 
 #### Friendly presentation of Section/Descriptor 
 #### Export SI/SPI data to file
