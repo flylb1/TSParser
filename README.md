@@ -1,17 +1,18 @@
 
-###Introduction
+#Introduction
 TSParser is a cross-platform powerful DVB / MPEG stream analyzer program.
 It works on Windows, Linux, Mac OS X.
 
-###Features
-* Web based application
-* Easy configue PID/Table ID
-* Easy add new Secion/Descriptor syntax
-* Dynamic load Section/Descriptor 
-* Friendly presentation of Section/Descriptor 
-* Export SI/SPI data to file
-* Support 3rd add new application in java 
-* 
+#Features
+## Web based application
+   TSParser is a web-based application, you can install it on a server, the other client to access the application through a browser
+## Easy configue PID/Table ID
+## Easy add new Secion/Descriptor syntax
+## Dynamic load Section/Descriptor 
+## Friendly presentation of Section/Descriptor 
+## Export SI/SPI data to file
+## Support 3rd add new application in java 
+##  
 
 
 ###LICENSE
