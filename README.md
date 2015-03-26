@@ -5,8 +5,13 @@ It works on Windows, Linux, Mac OS X.
 
 ###Features
 #### Web based application
-   TSParser is a web-based application, you can install it on a server, the other client to access the application through a browser
+TSParser is a web-based application, you can install it on a server, the other client to access the application through a browser. [Main](https://cloud.githubusercontent.com/assets/8717254/6841100/dc949af2-d3bf-11e4-9f97-6208ba18921a.png)
 #### Easy configue PID/Table ID
+User cans custom PID filter for runtime used.PMT filter will be disabled if PAT is disabled.Decrease filter will cause parser faster.[system_setting_pid](https://cloud.githubusercontent.com/assets/8717254/6841193/144da38e-d3c1-11e4-8c6b-685dad7f58de.png)
+
+User can custom Table ID filter for runtime used,User can enabled/disable a special Table for parser used.
+[system_setting_tid](https://cloud.githubusercontent.com/assets/8717254/6841213/61f5b6a8-d3c1-11e4-9db0-484645f1c764.png)
+
 #### Easy add new Secion/Descriptor syntax
 #### Dynamic load Section/Descriptor 
 #### Friendly presentation of Section/Descriptor 
