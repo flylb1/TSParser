@@ -1,15 +1,15 @@
 
 ###1 Introduction
-TSParser is a cross-platform powerful DVB / MPEG stream analyzer program.
-It works on Windows, Linux, Mac OS X.
+TSParser is a powerful cross-platform DVB/ MPEG stream analyzer.
+It works well under Windows, Linux, Mac OS X.
 ![introduce](https://cloud.githubusercontent.com/assets/8717254/6841219/94298906-d3c1-11e4-9fcb-225089ada675.png)
 
 
 ###2 Features
 ####2.1 Web based application
-TSParser is a web-based application, you can install it on a server, the other client to access the application through a browser. [Main](https://cloud.githubusercontent.com/assets/8717254/6841100/dc949af2-d3bf-11e4-9f97-6208ba18921a.png)
+TSParser is a web-based application. User can install it on a server, and the client will access it via a browser. [Main](https://cloud.githubusercontent.com/assets/8717254/6841100/dc949af2-d3bf-11e4-9f97-6208ba18921a.png)
 ####2.2 Easy configue PID/Table ID
-User cans custom PID filter for runtime used.PMT filter will be disabled if PAT is disabled.Decrease filter will cause parser faster.[system_setting_pid](https://cloud.githubusercontent.com/assets/8717254/6841193/144da38e-d3c1-11e4-8c6b-685dad7f58de.png)
+User can customize PID filter for runtime used.PMT filter will be disabled if PAT is disabled.Decrease filter will cause parser faster.[system_setting_pid](https://cloud.githubusercontent.com/assets/8717254/6841193/144da38e-d3c1-11e4-8c6b-685dad7f58de.png)
 
 User can custom Table ID filter for runtime used,User can enabled/disable a special Table for parser used.
 [system_setting_tid](https://cloud.githubusercontent.com/assets/8717254/6841213/61f5b6a8-d3c1-11e4-9db0-484645f1c764.png)
