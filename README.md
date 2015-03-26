@@ -1,6 +1,6 @@
 
 ###1 Introduction
-TSParser is a powerful cross-platform DVB / MPEG stream analyzer. 
+TSParser is a powerful cross-platform DVB/ MPEG stream analyzer. 
 It works well under Windows, Linux, and Mac OS.
 ![introduce](https://cloud.githubusercontent.com/assets/8717254/6841219/94298906-d3c1-11e4-9fcb-225089ada675.png)
 
