@@ -191,7 +191,7 @@ public class TextUtil {
                 for (int i = 0; i < arb.length; i++) {
                     arb[i] = (char) (buffer[i] & 0x00ff);
                 }
-                str = iso6937ToUnicode.convert(new String(arb));
+                str = iso6937ToUnicode.convert(arb);
             }
 
             return str;
