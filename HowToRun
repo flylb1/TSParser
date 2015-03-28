@@ -45,6 +45,7 @@ Using browse visitor "http://localhost:9090/TSP"
 
 
 2 From Dist
+command : cd DIST
 Run startup.bat or startup.sh base on your OS
 
 When you see console output "AbstractConnector:Started SelectChannelConnector@0.0.0.0:8080"
