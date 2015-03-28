@@ -43,9 +43,26 @@ that mean program running.
 
 Using browse visitor "http://localhost:9090/TSP"
 
+1.4 Build WAR
+Install "WAR product" from eclipse update .(currently i am used "Luna - http://download.eclipse.org/releases/luna")
+open "create_war.warproduct" ,export to TSP.war.
 
-2 From Dist
-command : cd DIST
+
+2 Run from WAR
+command : cd you_war_dir
+The current war directory should contain bellow files, you can copy these files from DIST directory.
+ 3rd
+ HowToRun
+ LICENSE
+ NOTICE
+ jetty-runner-8.1.9.v20130131.jar
+ startup.bat
+ startup.sh
+ syntax
+ tspConfig.xml
+
+java -jar jetty-runner-8.1.9.v20130131.jar --port 8080  TSP.war
+Or
 Run startup.bat or startup.sh base on your OS
 
 When you see console output "AbstractConnector:Started SelectChannelConnector@0.0.0.0:8080"
