@@ -21,15 +21,15 @@ TSParser uses Section/Descriptor syntax to parse sections/ descriptors. It has t
 TSParser has already integrated SPEC listed as below. The main work is to copy syntax from SPEC and paste it into the application.
 
   * 13818
-  * 300468
-  * 102809
-  * 102812
-  * Dbook
-  * 101202
-  * polsat_stb
+  * [ETSI EN 300 468](http://www.etsi.org/deliver/etsi_en/300400_300499/300468/01.11.01_60/en_300468v011101p.pdf)
+  * [ETSI TS 102 809](http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p.pdf)
+  * [ETSI TS 102 812](http://www.etsi.org/deliver/etsi_ts/102800_102899/102812/01.02.01_60/ts_102812v010201p.pdf)
+  * DTG D-Book
+  * [ETSI TR 101 202](http://www.etsi.org/deliver/etsi_tr/101200_101299/101202/01.02.01_60/tr_101202v010201p.pdf)
+  * Polsat_stb
 
 
-####2.4 Dynamically load Section/ Descriptor 
+####2.4 Dynamically load Section/ Descriptor script
 TSParser has both Lexer and Parser, which can help recognize the Section/ Descriptor scripts.  (Thanks [Antlr](http://www.antlr.org/))
 
 TSParser translates the scripts into java source code at first, then to compile java code into byte code, finally to dynamically load byte code into JVM at runtime. (Thanks [Janino](http://docs.codehaus.org/display/JANINO/Home))
@@ -54,8 +54,8 @@ There are 3 build-in applications in TSParser:
 * Demo Application (simple demo)
 
 
-###3 Run
-Please see HowToRun for detail
+###3 Run and Build
+Please see file "HowToRun" for detail
 
 
 ###4 LICENSE
