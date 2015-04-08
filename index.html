@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tsparser by flylb1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Tsparser</h1>
+      <h2 class="project-tagline">Java MPEG2 Analyzer</h2>
+      <a href="https://github.com/flylb1/TSParser" class="btn">View on GitHub</a>
+      <a href="https://github.com/flylb1/TSParser/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/flylb1/TSParser/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="1-introduction" class="anchor" href="#1-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Introduction</h3>
+
+<p>TSParser is a powerful cross-platform DVB/ MPEG stream analyzer. 
+It works well under Windows, Linux, and Mac OS.
+<img src="https://cloud.githubusercontent.com/assets/8717254/6841219/94298906-d3c1-11e4-9fcb-225089ada675.png" alt="introduce"></p>
+
+<h3>
+<a id="2-features" class="anchor" href="#2-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>2 Features</h3>
+
+<h4>
+<a id="21-web-based-application" class="anchor" href="#21-web-based-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1 Web based application</h4>
+
+<p>TSParser is a web-based application. User can install it on a server, and the client will access the application via a browser. 
+<a href="https://cloud.githubusercontent.com/assets/8717254/6841100/dc949af2-d3bf-11e4-9f97-6208ba18921a.png">Main</a></p>
+
+<h4>
+<a id="22-easy-to-configure-pid-table-id" class="anchor" href="#22-easy-to-configure-pid-table-id" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2 Easy to configure PID/ Table ID</h4>
+
+<p>User can customize the PID filters easily for runtime usage. Notice that PMT filter will be disabled if PAT is disabled. Besides, decreasing the number of filters can make parser faster. <a href="https://cloud.githubusercontent.com/assets/8717254/6841193/144da38e-d3c1-11e4-8c6b-685dad7f58de.png">system_setting_pid</a></p>
+
+<p>Table ID filters can also be customized. User can enable/disable a special Table when parsing a stream.
+<a href="https://cloud.githubusercontent.com/assets/8717254/6841213/61f5b6a8-d3c1-11e4-9db0-484645f1c764.png">system_setting_tid</a></p>
+
+<h4>
+<a id="23-easy-to-add-new-section-descriptor-syntax" class="anchor" href="#23-easy-to-add-new-section-descriptor-syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3 Easy to add new Section/ Descriptor syntax</h4>
+
+<p>TSParser uses Section/Descriptor syntax to parse sections/ descriptors. It has the ability to let user modify the Section &amp; Descriptor syntax at runtime. Once the syntax is changed, the stream’s analysis result will be updated meanwhile. Syntax files locate under %INSTALL_DIR%\syntax. User can also modify these syntax files outside of the system.</p>
+
+<p>TSParser has already integrated SPEC listed as below. The main work is to copy syntax from SPEC and paste it into the application.</p>
+
+<ul>
+<li>13818</li>
+<li><a href="http://www.etsi.org/deliver/etsi_en/300400_300499/300468/01.11.01_60/en_300468v011101p.pdf">ETSI EN 300 468</a></li>
+<li><a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p.pdf">ETSI TS 102 809</a></li>
+<li><a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102812/01.02.01_60/ts_102812v010201p.pdf">ETSI TS 102 812</a></li>
+<li>DTG D-Book</li>
+<li><a href="http://www.etsi.org/deliver/etsi_tr/101200_101299/101202/01.02.01_60/tr_101202v010201p.pdf">ETSI TR 101 202</a></li>
+<li>Polsat_stb</li>
+</ul>
+
+<h4>
+<a id="24-dynamically-load-section-descriptor-script" class="anchor" href="#24-dynamically-load-section-descriptor-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4 Dynamically load Section/ Descriptor script</h4>
+
+<p>TSParser has both Lexer and Parser, which can help recognize the Section/ Descriptor scripts.  (Thanks <a href="http://www.antlr.org/">Antlr</a>)</p>
+
+<p>TSParser translates the scripts into java source code at first, then to compile java code into byte code, finally to dynamically load byte code into JVM at runtime. (Thanks <a href="http://docs.codehaus.org/display/JANINO/Home">Janino</a>)</p>
+
+<h4>
+<a id="25-friendly-presentation-of-sectiondescriptor" class="anchor" href="#25-friendly-presentation-of-sectiondescriptor" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.5 Friendly presentation of Section/Descriptor</h4>
+
+<p>For a specific section, TSParser has three methods to show the section/descriptor data.</p>
+
+<ul>
+<li><a href="https://cloud.githubusercontent.com/assets/8717254/6841486/65445c56-d3c6-11e4-99a0-d1c01e6e5db5.png">Tree view</a></li>
+<li><a href="https://cloud.githubusercontent.com/assets/8717254/6841499/98f1e276-d3c6-11e4-9010-7c1e4e81f169.png">Text view</a></li>
+<li><a href="https://cloud.githubusercontent.com/assets/8717254/6841507/b7a141c6-d3c6-11e4-9eb3-342c54311e31.png">Raw data view</a></li>
+<li><a href="https://cloud.githubusercontent.com/assets/8717254/6841517/d6a27572-d3c6-11e4-90a4-688382fda603.png">Syntax view</a></li>
+</ul>
+
+<h4>
+<a id="26-export-sispi-data-to-file" class="anchor" href="#26-export-sispi-data-to-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.6 Export SI/SPI data to file</h4>
+
+<p>Usually, the size of stream is very large. It costs time to transfer the stream for analysis. TSParser supports a way to export only SI/ PSI data. It can be very useful since the size of SI/ PSI data becomes very small while audio/ video data is ignored. Especially, it makes quite convenient when field try.</p>
+
+<h4>
+<a id="27-support-3rd-to-add-new-application-in-java" class="anchor" href="#27-support-3rd-to-add-new-application-in-java" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.7 Support 3rd to add new application in Java</h4>
+
+<p>User can write third party applications based on stream data in Java with Java1.5 style. Third party Applications locate in %INSTALL_DIR%/3rd/src. When TSParser startups, these applications will be auto registered into the system.</p>
+
+<p>There are 3 build-in applications in TSParser:</p>
+
+<ul>
+<li>Service List application base on SDT(Show service list )</li>
+<li>EPG Application base on EIT (show EPG)</li>
+<li>Demo Application (simple demo)</li>
+</ul>
+
+<h3>
+<a id="3-run-and-build" class="anchor" href="#3-run-and-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>3 Run and Build</h3>
+
+<p>Please see file "HowToRun" for detail</p>
+
+<h3>
+<a id="4-license" class="anchor" href="#4-license" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 LICENSE</h3>
+
+<p>TSParser is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 License</a>, which means user can use it for free, and without strings attached in commercial or non-commercial projects. </p>
+
+<h3>
+<a id="5-explanation" class="anchor" href="#5-explanation" aria-hidden="true"><span class="octicon octicon-link"></span></a>5 Explanation</h3>
+
+<p>Most codes are open source except for Lexer and Parser which are compiled in tsp_core.jar.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/flylb1/TSParser">Tsparser</a> is maintained by <a href="https://github.com/flylb1">flylb1</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
