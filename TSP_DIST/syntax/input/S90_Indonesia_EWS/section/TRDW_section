@@ -10,19 +10,20 @@ TRDW_section() {
  current_next_indicator	1	bslbf
  section_number	8	uimsbf
  last_section_number	8	uimsbf
-if(table_id_extension == 0x01 )
-{
- disaster_code 	16	uimsbf
- location_type_code	 8	uimsbf
- package_id 	8	uimsbf
- number_of_location_code	8	uimsbf
- for (i=0;i<N;i++)/*locations*/{	 	 
-   location_code	24	uimsbf
-   length_location_code	8	uimsbf
-   for (j=0;j<length_location_code;j++){	 	 
-     char_location_code	8	uimsbf
-   }	 	 
- }	
-} 	 
-CRC_32	32	rpchof
+ 
+	if(table_id_extension == 0x01 )
+	{
+		 disaster_code 	16	uimsbf
+		 location_type_code	 8	uimsbf
+		 package_id 	8	uimsbf
+		 number_of_location_code	8	uimsbf
+		 for (i=0;i<N;i++)/*locations*/{	 	 
+			   location_code	24	uimsbf
+			   location_code_length	8	uimsbf
+			   for (j=0;j<location_code_length;j++){	 	 
+			     char_location_code	8	uimsbf
+			   }	 	 
+		 }	
+	} 	 
+	CRC_32	32	rpchof
 }	 	 

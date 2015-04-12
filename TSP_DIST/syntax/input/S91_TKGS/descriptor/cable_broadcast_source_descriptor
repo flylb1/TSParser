@@ -1,0 +1,10 @@
+tag=0xA1
+cable_broadcast_source_descriptor(){		
+	descriptor_tag			8	uimsbf
+	descriptor_length		8	uimsbf
+	reserved				26	uimsbf
+	name_length				6	uimsbf
+	for (j=0;j<name_length;j++){		
+		char				8	uimsbf
+	}		
+}	
