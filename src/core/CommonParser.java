@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import org.antlr.grammar.v3.ANTLRParser.tokenSpec_return;
 import org.apache.log4j.Logger;
 
 @SuppressWarnings("unchecked")
@@ -201,6 +202,10 @@ public abstract class CommonParser {
         valueStack.pop();
     }
 
+    protected void rewindBits(int bits) {
+        sp.rewindBits(bits);
+    }
+
     protected List<NodeValue> parseDescriptorsBuffer(List<NodeValue> currentList, String name, byte[] buffer) throws Exception {
         if (buffer == null || buffer.length < 2) {
             log.debug("buffer is null");
@@ -295,7 +300,7 @@ public abstract class CommonParser {
                     List<NodeValue> valueList = new ArrayList<NodeValue>();
                     valueStack.push(valueList);
                     descriptorInstance.setValueStack(valueStack);
-                    log.debug("Parsing descriptor:" + StringUtil.formatString(descriptorInstance.getName(), 30) //
+                    log.debug("Parsing descriptor:" + StringUtil.formatString(descriptorInstance.getName(), 50) //
                             + "\t" + StringUtil.formatString(Integer.toHexString(descriptor_tag), 4)//
                             + "\tlength=" + (descriptor_length + 2));
                     descriptorInstance.parse(descriptBuffer, descriptor_length + 2/* +2 mean add length for tag and length */);
@@ -330,8 +335,10 @@ public abstract class CommonParser {
 
             // last parse has exception
             if (parseDescHasException == true) {
-                log.info(parseDescException.toString());
-                throw parseDescException;
+                if (parseDescException != null) {
+                    log.info(parseDescException.toString());
+                    throw parseDescException;
+                }
             }
         }
         return descriptors;

@@ -1,0 +1,17 @@
+tkgs_section(){		
+	table_id					8	uimsbf
+	section_syntax_indicator	1	bslbf
+	reserved_by_tkgs			1	bslbf
+	reserved					2	bslbf
+	section_length				12	uimsbf
+	data_type					16	uimsbf
+	reserved					2	bslbf
+	version_number				5	uimsbf
+	current_next_indicator		1	bslbf
+	section_number				8	uimsbf
+	last_section_number			8	uimsbf
+	for (i=0; i<section_length-9; i++){		
+		tkgs_data_byte			8	bslbf
+	}		
+	CRC_32	32	rpchof
+}

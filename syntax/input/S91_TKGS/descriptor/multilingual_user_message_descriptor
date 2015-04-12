@@ -1,0 +1,12 @@
+tag=0x90
+multilingual_user_message_descriptor(){		
+	descriptor_tag				8	uimsbf
+	descriptor_length			8	uimsbf
+	for (i=0;i<descriptor_length;i++)/*languages*/ {		
+		ISO_639_language_code	24	bslbf
+		message_length			8	uimsbf
+		for (j=0;j<message_length;j++){		
+			char				8	uimsbf
+		}		
+	}		
+}		

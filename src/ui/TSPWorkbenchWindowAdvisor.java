@@ -49,8 +49,6 @@ import core.TSPConfig;
 public class TSPWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
     private static Logger log = Logger.getLogger(TSPWorkbenchWindowAdvisor.class);
 
-    public static FontRegistry fontRegistry = null;
-
     public TSPWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
         super(configurer);
     }
@@ -80,8 +78,8 @@ public class TSPWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
         Generator.generatorSytax(ROOT_DIR, false);// in memory compile
         this.getWindowConfigurer().getWindow().getShell().setMaximized(true);
         Display display = this.getWindowConfigurer().getWindow().getShell().getDisplay();
-        fontRegistry = new FontRegistry(display);
-        fontRegistry.put("code", new FontData[] { new FontData("Courier New", 12, SWT.NORMAL) });
+        RuntimeConfig.fontRegistry = new FontRegistry(display);
+        RuntimeConfig.fontRegistry.put("code", new FontData[] { new FontData("Courier New", 12, SWT.NORMAL) });
 
         ApplicationConfigureFactory.getAppMetas().clear();
 
@@ -119,6 +117,10 @@ public class TSPWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
         ServiceHandler tsExporthandler = new TsExportHandler();
         manager.unregisterServiceHandler("tsExporthandler");
         manager.registerServiceHandler("tsExporthandler", tsExporthandler);
+
+        ServiceHandler stringDownloadServiceHandler = new StringDownloadServiceHandler();
+        manager.unregisterServiceHandler("stringDownloadServiceHandler");
+        manager.registerServiceHandler("stringDownloadServiceHandler", stringDownloadServiceHandler);
 
         // clear all history
         StreamHistory.clear();

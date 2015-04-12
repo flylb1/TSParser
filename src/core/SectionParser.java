@@ -158,6 +158,12 @@ public class SectionParser { //
         return (token >= this.bufferLen);
     }
 
+    public void rewindBits(int bits) {
+        bitUsed -= bits;
+        token = bitUsed >> 3;
+        validBitPos = bitUsed - (token << 3);
+    }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("SectionParser [buffer=");

@@ -115,6 +115,11 @@
       <name>IndonesiaEWSPid</name>
       <enable>true</enable>
     </Pid>
+    <Pid>
+      <pid>8181</pid>
+      <name>TKGS</name>
+      <enable>true</enable>
+    </Pid>
     
   </PIDS>
   <tableIdList>
@@ -345,8 +350,16 @@
       <fullClassName>S90_Indonesia_EWS.section.TRDW_section</fullClassName>
       <enable>true</enable>
     </Table>
+    <Table>
+      <start>167</start>
+      <end>0</end>
+      <shortName>TKGS</shortName>
+      <descript>TKGS</descript>
+      <fullClassName>S91_TKGS.section.tkgs_section</fullClassName>
+      <enable>true</enable>
+    </Table>
   </tableIdList>
-  <parseSize>10485760</parseSize>
+  <parseSize>52428800</parseSize>
   <serviceListAppSuppourt>true</serviceListAppSuppourt>
   <epgAppSuppourt>true</epgAppSuppourt>
   <identPMTUseBuffer>true</identPMTUseBuffer>

@@ -25,8 +25,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 import org.apache.log4j.Logger;
 
@@ -37,7 +40,7 @@ public class BitStream {
     private static final int BUFFER_SIZE = 100 * 188;
     private static int packetNumber = 0;
 
-    private double tsRate = 0;;
+    private double tsRate = 0;
     private int totalTime = 0;
     private int validTime = 0;
     private long parseLimitSize = 0;
@@ -378,23 +381,120 @@ public class BitStream {
         Generator.generatorSytax(ROOT_DIR, false);
         try {
             BitStream ts = new BitStream();
-            String fileName = "./youTSname.ts";
+            String fileName = "./42-11593V-25000.ts";
             log.info("Parse file:" + fileName);
-            parseSingleFile(ts, new File(fileName), 20 * 1024 * 1024, null);
+            parseSingleFile(ts, new File(fileName), 50 * 1024 * 1024, null);
+
             // ts.dumpSections(false);//
-            showPatResult(ts);
+            // showPatResult(ts);
             showPmtResult(ts);// Print pmt sections
-            showSdtResult(ts);// print SDT
+            // showSdtResult(ts);// print SDT
             // showTimeResult(ts);
             // showBatResult(ts);// print SDT
             // showEventResult(ts);
             // log.info(fileName);
+            showTkgs(ts);
             ts = null;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
         }
     }
+
+    private static void showTkgs(BitStream ts) {
+        byte[] byteBuffer = new byte[4096 * 32];
+        List<TSSection> tkgsSections = TSUtil.getSectionsByTableid(ts, 0xA7);
+
+        Collections.sort(tkgsSections, //
+                new Comparator<TSSection>() {
+                    @Override
+                    public int compare(TSSection o1, TSSection o2) {
+                        Object root1 = o1.getRoot();
+                        Object root2 = o2.getRoot();
+                        int number1 = (Integer) TSUtil.getObjectByName(root1, "section_number");
+                        int number2 = (Integer) TSUtil.getObjectByName(root2, "section_number");
+                        return (number1 < number2) ? -1 : 1;
+                    }
+                });
+
+        System.out.println("Total TKGS section number :" + tkgsSections.size());
+        int destPos = 0;
+        for (TSSection section : tkgsSections) {
+            Object root = section.getRoot();
+            int number = (Integer) TSUtil.getObjectByName(root, "section_number");
+            byte[] bytes = (byte[]) TSUtil.getObjectByName(root, "tkgs_data_byte");
+            log.info(number + ":" + bytes.length);
+            System.arraycopy(bytes, 0, byteBuffer, destPos, bytes.length);
+            destPos += bytes.length;
+        }
+        log.info(":" + destPos);
+
+        // log.info("\n" + StringUtil.getHexString((byte[]) byteBuffer, 0, 2 * 1024/* destPos */, 16));
+
+        Class<?> clazz = null;
+        try {
+            String clazzName = "S91_TKGS.section.tkgs_data_section";
+            clazz = SyntaxBuildFactory.getClazz(clazzName);
+            if (clazz == null) {
+                return;
+            }
+        } catch (ClassNotFoundException e1) {
+            e1.printStackTrace();
+        }
+
+        CommonParser commonParser = null;
+        Stack<List<NodeValue>> valueStack = new Stack<List<NodeValue>>();
+        valueStack.push(new ArrayList<NodeValue>());
+        try {
+            commonParser = (CommonParser) SyntaxBuildFactory.getInstanceByClass(clazz);// using pool
+            commonParser.setValueStack(valueStack);
+            commonParser.reset();
+            commonParser.parse(byteBuffer, destPos);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        StringBuffer sb = new StringBuffer();
+        int step = 0;
+        TSUtil.dumpNode(sb, valueStack.firstElement(), step, 80);
+
+        log.info("\n" + sb);
+
+    }
+
+    // private static void dumpNode(StringBuffer sb, List<NodeValue> values, int step) {
+    // int formatLen = 100;
+    // if (values == null) {
+    // return;
+    // }
+    // for (NodeValue node : values) {
+    // if (node.getValue() == null) {
+    // continue;
+    // }
+    // if (node.getValue().getClass() == ArrayList.class) {
+    // String name = StringUtil.formatString(StringUtil.getString(step, ' ') + node.getName(), formatLen);
+    // sb.append(name + "\n");
+    // step += 2;
+    // dumpNode(sb, (List<NodeValue>) node.getValue(), step);
+    // step -= 2;
+    // } else if (node.getValue().getClass() == byte[].class) {
+    // String name = StringUtil.formatString(StringUtil.getString(step, ' ') + node.getName() + "    ", formatLen);
+    // String hexPreFix = StringUtil.getString(name.length(), ' ');
+    // sb.append(name + StringUtil.getHexString((byte[]) node.getValue(), 16, hexPreFix) + "\n");
+    // // if (name.equalsIgnoreCase("Unknow")) {
+    // // System.out.println(node.getValue());
+    // // }
+    // } else {
+    // String name = StringUtil.formatString(StringUtil.getString(step, ' ') + node.getName() + "    ", formatLen);
+    // String value = StringUtil.formatString(node.getValue().toString(), 10);
+    // String hexValue = StringUtil.formatString(NumberUtil.Object2Hex(node.getValue()), 10);
+    // sb.append(name //
+    // + value //
+    // + " [0x" + hexValue + "]"//
+    // + "\n");
+    // }
+    // }
+    // }
 
     @SuppressWarnings("unused")
     private static void showBatResult(BitStream ts) {

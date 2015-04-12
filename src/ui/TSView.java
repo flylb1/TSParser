@@ -69,6 +69,7 @@ import core.CommonParser;
 import core.IParseNotify;
 import core.MyStreamFilter;
 import core.NodeValue;
+import core.RuntimeConfig;
 import core.TSSection;
 import core.TSUtil;
 import core.TableMeta;
@@ -361,7 +362,7 @@ public class TSView extends MyViewPart { //
             sectionTreeView.setControl(sectionTreeViewComposite);
             sectionTreeViewComposite.setLayout(new FillLayout());
             sectionTree = new Tree(sectionTreeViewComposite, SWT.NONE);
-            sectionTree.setFont(TSPWorkbenchWindowAdvisor.fontRegistry.get("code"));
+            sectionTree.setFont(RuntimeConfig.fontRegistry.get("code"));
             sectionTree.addListener(SWT.MouseDown, tableTreeListener);
             sectionTree.addKeyListener(sectionTreeKeyListener);
         }
@@ -375,7 +376,7 @@ public class TSView extends MyViewPart { //
             body.setLayout(new FillLayout());
 
             sectionText = new Text(body, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
-            sectionText.setFont(TSPWorkbenchWindowAdvisor.fontRegistry.get("code"));
+            sectionText.setFont(RuntimeConfig.fontRegistry.get("code"));
             sectionText.setEditable(false);
         }
 
@@ -388,7 +389,7 @@ public class TSView extends MyViewPart { //
             body.setLayout(new FillLayout());
 
             sectionRawText = new Text(body, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
-            sectionRawText.setFont(TSPWorkbenchWindowAdvisor.fontRegistry.get("code"));
+            sectionRawText.setFont(RuntimeConfig.fontRegistry.get("code"));
             sectionRawText.setEditable(false);
         }
 
@@ -401,7 +402,7 @@ public class TSView extends MyViewPart { //
             body.setLayout(new FillLayout());
 
             syntaxText = new Text(body, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);//
-            syntaxText.setFont(TSPWorkbenchWindowAdvisor.fontRegistry.get("code"));
+            syntaxText.setFont(RuntimeConfig.fontRegistry.get("code"));
             syntaxText.setEditable(false);
         }
     }
@@ -785,7 +786,6 @@ public class TSView extends MyViewPart { //
                 StringBuilder url = new StringBuilder();
                 HttpServletRequest req = RWT.getRequest();
 
-                // log.info(manager.getServiceHandlerUrl("tsExporthandler"));
                 url.append(req.getRequestURL());
                 url.append(manager.getServiceHandlerUrl("tsExporthandler").replaceAll("/TSP", ""));
                 url.append("&filename=");

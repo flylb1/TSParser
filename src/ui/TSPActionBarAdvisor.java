@@ -41,10 +41,12 @@ class TSPActionBarAdvisor extends ActionBarAdvisor {
     private Action settingAction;
     private Action syntaxAction;
     private Action thirdAppAction;
+    private Action homeAction;
 
     private ImageDescriptor syntaxImageDescriptor = AbstractUIPlugin.imageDescriptorFromPlugin(TSPActivator.PLUGIN_ID, "/icons/syntax.gif");
     private ImageDescriptor openImageDescriptor = AbstractUIPlugin.imageDescriptorFromPlugin(TSPActivator.PLUGIN_ID, "/icons/open.gif");
     private ImageDescriptor aboutImageDescriptor = AbstractUIPlugin.imageDescriptorFromPlugin(TSPActivator.PLUGIN_ID, "/icons/license.gif");
+    private ImageDescriptor homeImageDescriptor = AbstractUIPlugin.imageDescriptorFromPlugin(TSPActivator.PLUGIN_ID, "/icons/home.gif");
     private ImageDescriptor settingImageDescriptor = AbstractUIPlugin.imageDescriptorFromPlugin(TSPActivator.PLUGIN_ID,
             "/icons/setting.gif");
     private ImageDescriptor thirdAppImageDescriptor = AbstractUIPlugin.imageDescriptorFromPlugin(TSPActivator.PLUGIN_ID,
@@ -76,6 +78,21 @@ class TSPActionBarAdvisor extends ActionBarAdvisor {
             }
         };
         aboutAction.setImageDescriptor(aboutImageDescriptor);
+        
+        
+        homeAction= new Action("Home") {
+            private static final long serialVersionUID = 1L;
+
+            public void run() {
+                super.run();
+                try {
+                    PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(HomeView.ID);
+                } catch (PartInitException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        homeAction.setImageDescriptor(homeImageDescriptor);
         // For help action end
 
         // For openFileAction action start
@@ -131,7 +148,6 @@ class TSPActionBarAdvisor extends ActionBarAdvisor {
         };
         thirdAppAction.setImageDescriptor(thirdAppImageDescriptor);
 
-
     }
 
     protected void fillMenuBar(IMenuManager menuBar) {
@@ -149,6 +165,8 @@ class TSPActionBarAdvisor extends ActionBarAdvisor {
             toolbar.add(settingAction);
             toolbar.add(thirdAppAction);
             toolbar.add(aboutAction);
+            toolbar.add(homeAction);
+            
         } catch (Exception e) {
             e.printStackTrace();
             return;

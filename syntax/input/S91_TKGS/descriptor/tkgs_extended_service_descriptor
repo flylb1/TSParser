@@ -1,0 +1,10 @@
+tag=0x95
+tkgs_extended_service_descriptor(){		
+	descriptor_tag		8	uimsbf
+	descriptor_length	8	uimsbf
+	reserved			48	bslbf
+	for(i=0;i<descriptor_length-6;i++)/*categorys*/{		
+		reserved		4	bslbf
+		category_id		12	uimsbf
+	}		
+}	

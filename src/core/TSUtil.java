@@ -420,4 +420,38 @@ public class TSUtil {
         return valid;
     }
 
+    public static void dumpNode(StringBuffer sb, List<NodeValue> values, int step, int formatLen) {
+        // int formatLen = 100;
+        if (values == null) {
+            return;
+        }
+        for (NodeValue node : values) {
+            if (node.getValue() == null) {
+                continue;
+            }
+            if (node.getValue().getClass() == ArrayList.class) {
+                String name = StringUtil.formatString(StringUtil.getString(step, ' ') + node.getName(), formatLen);
+                sb.append(name + "\n");
+                step += 2;
+                dumpNode(sb, (List<NodeValue>) node.getValue(), step, formatLen);
+                step -= 2;
+            } else if (node.getValue().getClass() == byte[].class) {
+                String name = StringUtil.formatString(StringUtil.getString(step, ' ') + node.getName() + "    ", formatLen);
+                String hexPreFix = StringUtil.getString(name.length(), ' ');
+                sb.append(name + StringUtil.getHexString((byte[]) node.getValue(), 16, hexPreFix) + "\n");
+                // if (name.equalsIgnoreCase("Unknow")) {
+                // System.out.println(node.getValue());
+                // }
+            } else {
+                String name = StringUtil.formatString(StringUtil.getString(step, ' ') + node.getName() + "    ", formatLen);
+                String value = StringUtil.formatString(node.getValue().toString(), 10);
+                String hexValue = StringUtil.formatString(NumberUtil.Object2Hex(node.getValue()), 10);
+                sb.append(name //
+                        + value //
+                        + " [0x" + hexValue + "]"//
+                        + "\n");
+            }
+        }
+    }
+
 }

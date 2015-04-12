@@ -1,0 +1,8 @@
+tag=0x94
+service_list_location_descriptor(){		
+	descriptor_tag			8	uimsbf
+	descriptor_length		8	uimsbf
+	logical_order			16	uimsbf
+	reserved				3	bslbf
+	tkgs_service_locator	13	uimsbf
+}
