@@ -20,26 +20,26 @@ package core;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class UnknowDescriptor extends CommonParser { // 
-	public void parse(byte[] descriptBuffer, int len) throws Exception {
-		super.parse(descriptBuffer, len);
-		parseData("descriptor_tag 8 uimsbf ");
-		parseData("descriptor_length 8 uimsbf ");
-		byte[] buffer = parseData(contextGet("descriptor_length") * 8, false, false);
-		NodeValue newNode = new NodeValue("Unknow", buffer);
-		List<NodeValue> currentList = (List<NodeValue>) getCurrentList();
-		currentList.add(newNode);
-	}
+public class UnknowDescriptor extends CommonParser { //
+    public void parse(byte[] descriptBuffer, int len) throws Exception {
+        super.parse(descriptBuffer, len);
+        parseData("descriptor_tag 8 uimsbf ");
+        parseData("descriptor_length 8 uimsbf ");
+        byte[] buffer = parseData(contextGet("descriptor_length") * 8, false, false);
+        NodeValue newNode = new NodeValue("Unknow", buffer);
+        List<NodeValue> currentList = (List<NodeValue>) getCurrentList();
+        currentList.add(newNode);
+    }
 
-	public String getSyntax() {
-		return "UnknowDescriptor";
-	}
+    public String getSyntax() {
+        return "UnknowDescriptor";
+    }
 
-	public String getIdInfo() {
-		return "tag=unknow";
-	}
+    public String getIdInfo() {
+        return "tag=unknow";
+    }
 
-	public String getName() {
-		return "Unknow";
-	}
+    public String getName() {
+        return "Unknow";
+    }
 }

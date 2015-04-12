@@ -34,6 +34,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.internal.util.BundleUtility;
 import org.osgi.framework.Bundle;
 
+import core.RuntimeConfig;
+
 public class AboutView extends MyViewPart { //
     private static Logger log = Logger.getLogger(AboutView.class);
     static final String ID = "AboutView";
@@ -59,11 +61,12 @@ public class AboutView extends MyViewPart { //
             text = new Text(textbody, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
             text.setEditable(false);
             text.setTouchEnabled(true);
+            text.setFont(RuntimeConfig.fontRegistry.get("code"));
             Bundle bundle = Platform.getBundle(TSPActivator.PLUGIN_ID);
             if (BundleUtility.isReady(bundle)) {
                 URL fullPathString = BundleUtility.find(bundle, "/icons/license.txt");
                 InputStream in = fullPathString.openStream();
-                byte[] buffer = new byte[1024 * 7];
+                byte[] buffer = new byte[1024 * 1];
                 in.read(buffer);
                 in.close();
                 String licenseStr = new String(buffer);

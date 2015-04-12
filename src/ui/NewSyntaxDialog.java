@@ -42,6 +42,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 import core.FileUtil;
 import core.Generator;
+import core.RuntimeConfig;
 import core.SyntaxBuildFactory;
 
 class NewSyntaxDialog extends Dialog {
@@ -138,7 +139,7 @@ class NewSyntaxDialog extends Dialog {
         });
 
         syntaxContentText = new Text(parent, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER);
-        syntaxContentText.setFont(TSPWorkbenchWindowAdvisor.fontRegistry.get("code"));
+        syntaxContentText.setFont(RuntimeConfig.fontRegistry.get("code"));
         syntaxContentText.setEditable(true);
         syntaxContentText.setLayoutData(new GridData(GridData.FILL_BOTH));
 

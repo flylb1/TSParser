@@ -18,15 +18,15 @@
 package core;
 
 public class PidMeta {
-    private  Integer pid;
-    private  String name;
-    private  boolean enable;
+    private Integer pid;
+    private String name;
+    private boolean enable;
 
     public PidMeta() {
         super();
     }
 
-    public PidMeta(Integer pid, String name) { // 
+    public PidMeta(Integer pid, String name) { //
         super();
         this.pid = pid;
         this.name = name;

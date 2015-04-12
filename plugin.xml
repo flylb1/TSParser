@@ -68,6 +68,14 @@
             name="Help"
             restorable="false">
       </view>
+      <view
+            allowMultiple="false"
+            class="ui.HomeView"
+            icon="icons/license.gif"
+            id="HomeView"
+            name="Home"
+            restorable="false">
+      </view>
    </extension>
    
    <extension

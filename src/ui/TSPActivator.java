@@ -26,12 +26,12 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class TSPActivator extends AbstractUIPlugin { // 
+public class TSPActivator extends AbstractUIPlugin { //
 
     // The plug-in ID
     public static final String PLUGIN_ID = "com.flylb.rap"; //$NON-NLS-1$ // 
-    public static String ROOT = null; // 
-    public static String CONFIGURE_FILE = null; // 
+    public static String ROOT = null; //
+    public static String CONFIGURE_FILE = null; //
 
     // The shared instance
     private static TSPActivator plugin;
@@ -75,7 +75,7 @@ public class TSPActivator extends AbstractUIPlugin { //
      * 
      * @return the shared instance
      */
-    public static TSPActivator getDefault() { // 
+    public static TSPActivator getDefault() { //
         return plugin;
     }
 
@@ -86,7 +86,7 @@ public class TSPActivator extends AbstractUIPlugin { //
      *            the path
      * @return the image descriptor
      */
-    public static ImageDescriptor getImageDescriptor(String path) { // 
+    public static ImageDescriptor getImageDescriptor(String path) { //
         return imageDescriptorFromPlugin(PLUGIN_ID, path);
     }
 }

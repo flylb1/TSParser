@@ -17,10 +17,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
-Antlrworks-1.4.3			BSD License
-commons-compiler			Apache License
-Janino					BSD License
-commons-beanutils-1.8.0		Apache License
-commons-logging1.1.1		Apache License
-log4j-1.2.14				Apache License
-Xstream-1.3.1				Xstream License
+Antlrworks-1.4.3            BSD License
+commons-compiler            Apache License
+Janino                      BSD License
+commons-beanutils-1.8.0     Apache License
+commons-logging1.1.1        Apache License
+log4j-1.2.14                Apache License
+Xstream-1.3.1               Xstream License

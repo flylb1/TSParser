@@ -18,22 +18,22 @@
 package core;
 
 public class MyStreamFilter {
-	public String path;
-	public int onid;
-	public int tsid;
-	public int svcid;
+    public String path;
+    public int onid;
+    public int tsid;
+    public int svcid;
 
-	public MyStreamFilter() {
-		super();
-		path = null;
-		onid = -1;
-		tsid = -1;
-		svcid = -1;
-	}
+    public MyStreamFilter() {
+        super();
+        path = null;
+        onid = -1;
+        tsid = -1;
+        svcid = -1;
+    }
 
-	@Override
-	public String toString() {
-		return "StreamFilter [path=" + path + ", onid=" + onid + ", tsid=" + tsid + ", svcid=" + svcid + "]";
-	}
+    @Override
+    public String toString() {
+        return "StreamFilter [path=" + path + ", onid=" + onid + ", tsid=" + tsid + ", svcid=" + svcid + "]";
+    }
 
 }

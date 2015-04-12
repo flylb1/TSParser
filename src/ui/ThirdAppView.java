@@ -34,6 +34,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import core.FileUtil;
+import core.RuntimeConfig;
 import core.SyntaxBuildFactory;
 
 public class ThirdAppView extends MyViewPart { //
@@ -65,6 +66,7 @@ public class ThirdAppView extends MyViewPart { //
                     comp.setLayout(new FillLayout());
                     tabItem.setControl(comp);
                     Text syntaxText = new Text(comp, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
+                    syntaxText.setFont(RuntimeConfig.fontRegistry.get("code"));
                     syntaxText.setText(sb.toString());
                     tabItem.setData("Text", syntaxText);
                     tabFolder.setSelection(tabItem);

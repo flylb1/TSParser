@@ -20,37 +20,37 @@ package core;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Filter { // 
-	/** pid */
-	// private static Logger log = Logger.getLogger(Filter.class);
-	Map<Integer, String> pids = new HashMap<Integer, String>();
+public class Filter { //
+    /** pid */
+    // private static Logger log = Logger.getLogger(Filter.class);
+    Map<Integer, String> pids = new HashMap<Integer, String>();
 
-	void addPidFilter(int pid, String name) {
-		if (pids.containsValue(name) && name.equals("PCR_PID")) {
-			return;
-		}
-		if (pids.containsKey(pid)) {
-			return;
-		}
-		pids.put(pid, name);
-		// log.debug("pid=" + pid + " name=" + name);
-	}
+    void addPidFilter(int pid, String name) {
+        if (pids.containsValue(name) && name.equals("PCR_PID")) {
+            return;
+        }
+        if (pids.containsKey(pid)) {
+            return;
+        }
+        pids.put(pid, name);
+        // log.debug("pid=" + pid + " name=" + name);
+    }
 
-	boolean inPidFilter(int pid) {
-		return pids.containsKey(pid);
-	}
+    boolean inPidFilter(int pid) {
+        return pids.containsKey(pid);
+    }
 
-	public Map<Integer, String> getPids() {
-		return pids;
-	}
+    public Map<Integer, String> getPids() {
+        return pids;
+    }
 
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Filter \r\n");
-		for (Integer pid : pids.keySet()) {
-			builder.append("pid:" + pid + " name:" + pids.get(pid) + "\r\n");
-		}
-		return builder.toString();
-	}
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Filter \r\n");
+        for (Integer pid : pids.keySet()) {
+            builder.append("pid:" + pid + " name:" + pids.get(pid) + "\r\n");
+        }
+        return builder.toString();
+    }
 
 }

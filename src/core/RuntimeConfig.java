@@ -20,6 +20,8 @@ package core;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.jface.resource.FontRegistry;
+
 public class RuntimeConfig { //
     public static TSPConfig TSP_Config;
     public static int byteLineNumber = 16;
@@ -29,6 +31,7 @@ public class RuntimeConfig { //
     public static List<Integer> monitor_pid = new ArrayList<Integer>();
     public static List<Integer> monitor_tid = new ArrayList<Integer>(); //
     public static boolean storeRawData = true; //
+    public static FontRegistry fontRegistry = null;
 
     static {
         // monitor_pid.add(900);

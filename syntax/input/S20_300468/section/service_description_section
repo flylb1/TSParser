@@ -12,7 +12,7 @@ service_description_section(){
 	last_section_number 8 uimsbf
 	original_network_id 16 uimsbf
 	reserved_future_use 8 bslbf
-	for (i=0;i<N;i++)/*services*/{
+	for (i=0;i<section_length-12;i++)/*services*/{
 		service_id 16 uimsbf
 		reserved_future_use 6 bslbf
 		EIT_schedule_flag 1 bslbf

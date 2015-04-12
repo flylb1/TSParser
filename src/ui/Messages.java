@@ -20,30 +20,30 @@ package ui;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "ui.messages"; //$NON-NLS-1$
-	public static String ConfigFilterDialog_0;
-	public static String ConfigFilterDialog_1;
-	public static String ConfigFilterDialog_10;
-	public static String ConfigFilterDialog_11;
-	public static String ConfigFilterDialog_12;
-	public static String ConfigFilterDialog_13;
-	public static String ConfigFilterDialog_14;
-	public static String ConfigFilterDialog_15;
-	public static String ConfigFilterDialog_16;
-	public static String ConfigFilterDialog_17;
-	public static String ConfigFilterDialog_2;
-	public static String ConfigFilterDialog_3;
-	public static String ConfigFilterDialog_4;
-	public static String ConfigFilterDialog_5;
-	public static String ConfigFilterDialog_6;
-	public static String ConfigFilterDialog_7;
-	public static String ConfigFilterDialog_8;
-	public static String ConfigFilterDialog_9;
-	static {
-		// initialize resource bundle
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+    private static final String BUNDLE_NAME = "ui.messages"; //$NON-NLS-1$
+    public static String ConfigFilterDialog_0;
+    public static String ConfigFilterDialog_1;
+    public static String ConfigFilterDialog_10;
+    public static String ConfigFilterDialog_11;
+    public static String ConfigFilterDialog_12;
+    public static String ConfigFilterDialog_13;
+    public static String ConfigFilterDialog_14;
+    public static String ConfigFilterDialog_15;
+    public static String ConfigFilterDialog_16;
+    public static String ConfigFilterDialog_17;
+    public static String ConfigFilterDialog_2;
+    public static String ConfigFilterDialog_3;
+    public static String ConfigFilterDialog_4;
+    public static String ConfigFilterDialog_5;
+    public static String ConfigFilterDialog_6;
+    public static String ConfigFilterDialog_7;
+    public static String ConfigFilterDialog_8;
+    public static String ConfigFilterDialog_9;
+    static {
+        // initialize resource bundle
+        NLS.initializeMessages(BUNDLE_NAME, Messages.class);
+    }
 
-	private Messages() {
-	}
+    private Messages() {
+    }
 }

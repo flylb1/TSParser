@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.TabItem;
 
 import core.BitStream;
 
-public interface IApplication { // 
+public interface IApplication { //
     String getAppName();
 
     void render(TabItem applicationTabItem, BitStream bitStream);

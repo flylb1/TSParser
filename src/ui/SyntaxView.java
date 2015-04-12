@@ -56,6 +56,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import core.FileUtil;
 import core.Generator;
+import core.RuntimeConfig;
 import core.SyntaxBuildFactory;
 
 class SyntaxTreeMenuListener implements MenuListener {
@@ -189,6 +190,7 @@ public class SyntaxView extends MyViewPart { //
         comp.setLayout(new FillLayout());
         tabItem.setControl(comp);
         Text syntaxText = new Text(comp, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
+        syntaxText.setFont(RuntimeConfig.fontRegistry.get("code"));
         syntaxText.setText(sb.toString());
         tabItem.setData("Text", syntaxText);
         tabFolder.setSelection(tabItem);

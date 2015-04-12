@@ -23,7 +23,7 @@ public class Service {
     private int svcId;
     private String serviceName;
 
-    public Service(int onId, int tsId, int svcId) { // 
+    public Service(int onId, int tsId, int svcId) { //
         super();
         this.onId = onId;
         this.tsId = tsId;

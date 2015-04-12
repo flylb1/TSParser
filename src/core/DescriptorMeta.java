@@ -17,7 +17,7 @@
  *******************************************************************************/
 package core;
 
-public class DescriptorMeta { // 
+public class DescriptorMeta { //
     private short tag;
     private String name;
     private Class<?> clazz;

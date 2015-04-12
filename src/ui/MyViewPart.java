@@ -24,25 +24,25 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.part.ViewPart;
 
 abstract class MyViewPart extends ViewPart {
-	protected Composite body;
+    protected Composite body;
 
-	public void createPartControl(Composite parent) {
-		parent.setLayout(new FillLayout());
-		body = new Composite(parent, SWT.FILL);
-	}
+    public void createPartControl(Composite parent) {
+        parent.setLayout(new FillLayout());
+        body = new Composite(parent, SWT.FILL);
+    }
 
-	protected void showMessage(String title, String mesg, int style) {
-		MessageBox mb = new MessageBox(this.getViewSite().getShell(), style);
-		mb.setText(title);
-		mb.setMessage(mesg);
-		mb.open();
-	}
+    protected void showMessage(String title, String mesg, int style) {
+        MessageBox mb = new MessageBox(this.getViewSite().getShell(), style);
+        mb.setText(title);
+        mb.setMessage(mesg);
+        mb.open();
+    }
 
-	public void setFocus() {
-	}
+    public void setFocus() {
+    }
 
-	public String getHelp() {
-		return null;
-	}
+    public String getHelp() {
+        return null;
+    }
 
 }

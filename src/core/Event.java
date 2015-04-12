@@ -33,7 +33,7 @@ public class Event implements Comparable<Event> {
         super();
     }
 
-    public Event(int eventId, Calendar startTime, int duration) { // 
+    public Event(int eventId, Calendar startTime, int duration) { //
         super();
         this.eventId = eventId;
         this.startTime = startTime;

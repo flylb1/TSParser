@@ -24,9 +24,8 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 /**
  * This workbench advisor creates the window advisor, and specifies the perspective id for the initial window.
  */
-public class TSPWorkbenchAdvisor extends WorkbenchAdvisor { // 
+public class TSPWorkbenchAdvisor extends WorkbenchAdvisor { //
     private static final String PERSPECTIVE_ID = "com.flylb.rap.perspective";
-
 
     public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
         return new TSPWorkbenchWindowAdvisor(configurer);
@@ -35,6 +34,5 @@ public class TSPWorkbenchAdvisor extends WorkbenchAdvisor { //
     public String getInitialWindowPerspectiveId() {
         return PERSPECTIVE_ID;
     }
-    
-    
+
 }

@@ -158,8 +158,6 @@ class OpenFileDialog extends Dialog {
 
             }
         });
-        
-        
 
         pathText.addKeyListener(new KeyListener() {
             private static final long serialVersionUID = 1L;
@@ -239,7 +237,7 @@ class OpenFileDialog extends Dialog {
             }
         });
         pathText.setFocus();
-        
+
         listDir(pathText);
 
         parent.layout();

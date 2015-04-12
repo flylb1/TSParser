@@ -50,7 +50,7 @@ public class Iso6937ToUnicode {
     }
 
     static Map<Integer, Integer> map0 = new HashMap<Integer, Integer>();
-    static Map<Integer, Integer> map1  = new HashMap<Integer, Integer>();
+    static Map<Integer, Integer> map1 = new HashMap<Integer, Integer>();
     static {
         map0.put(0xA0, 0x00A0); // 10/00 NO-BREAK SPACE
         map0.put(0xA1, 0x00A1); // 10/01 INVERTED EXCLAMATION MARK

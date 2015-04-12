@@ -18,39 +18,41 @@
 package core;
 
 public class NumberUtil {
-	public static String Object2Hex(Object object) {
-		if (object.getClass() == Long.class) {
-			return Long.toHexString((Long) object).toUpperCase();
-		} else if (object.getClass() == Integer.class) {
-			return Integer.toHexString((Integer) object).toUpperCase();
-		} else if (object.getClass() == Short.class) {
-			return Integer.toHexString((Short) object).toUpperCase();
-		} else if (object.getClass() == Byte.class) {
-			return Integer.toHexString((Byte) object).toUpperCase();
-		} else if (object.getClass() == byte[].class) {
-			byte[] bytes = (byte[]) object;
-			if (bytes.length <= 4) {
-				return StringUtil.getHexString(bytes);
-			}
-		}
-		return "";
-	}
+    public static String Object2Hex(Object object) {
+        if (object.getClass() == Long.class) {
+            return Long.toHexString((Long) object).toUpperCase();
+        } else if (object.getClass() == Integer.class) {
+            return Integer.toHexString((Integer) object).toUpperCase();
+        } else if (object.getClass() == Short.class) {
+            return Integer.toHexString((Short) object).toUpperCase();
+        } else if (object.getClass() == Byte.class) {
+            return Integer.toHexString((Byte) object).toUpperCase();
+        } else if (object.getClass() == byte[].class) {
+            byte[] bytes = (byte[]) object;
+            if (bytes.length <= 4) {
+                return StringUtil.getHexString(bytes);
+            }
+        }
+        return "";
+    }
 
-	public static int getIntValue(Object object) {
-		if (object == null) {
-			return -1;
-		}
-		if (object.getClass() == Integer.class) {
-			return ((Integer) object).intValue();
-		} else if (object.getClass() == Short.class) {
-			return ((Short) object).intValue();
-		} else if (object.getClass() == Byte.class) {
-			return ((Byte) object).intValue();
-		}
-		return -1;
-	}
+    public static int getIntValue(Object object) {
+        if (object == null) {
+            return -1;
+        }
+        if (object.getClass() == Long.class) {
+            return ((Long) object).intValue();
+        } else if (object.getClass() == Integer.class) {
+            return ((Integer) object).intValue();
+        } else if (object.getClass() == Short.class) {
+            return ((Short) object).intValue();
+        } else if (object.getClass() == Byte.class) {
+            return ((Byte) object).intValue();
+        }
+        return -1;
+    }
 
-	public static int unsignedByteToInt(byte b) {
-		return (int) b & 0xFF;
-	}
+    public static int unsignedByteToInt(byte b) {
+        return (int) b & 0xFF;
+    }
 }

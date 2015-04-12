@@ -242,8 +242,12 @@ public class TextUtil {
         return new String(buffer);
     }
 
-    public void test() {
-        String rawStr = "10 00 02 50 6F 6C 6F 77 61 6E 69 65 20 6E 61 20 6D 79 B6 6C 69 77 65 67 6F";
+    public static void main(String[] args) {
+        test();
+    }
+
+    public static void test() {
+        String rawStr = "4D 45 47 41 53 49 4E 45";
         List<String> list = StringUtil.string2List(rawStr, " ");
         byte[] bytes = new byte[list.size()];
         int listSize = list.size();
