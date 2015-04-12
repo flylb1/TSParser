@@ -31,7 +31,7 @@ public class HomeView extends MyViewPart { //
         body.setLayout(new FillLayout());
 
         browser = new Browser(body, SWT.FILL | SWT.BORDER);
-        browser.setUrl("http://flylbblog.duapp.com/?page_id=85");
+        browser.setUrl("http://flylb1.github.io/TSParser/");
 
         parent.layout();
     }
