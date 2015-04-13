@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import org.antlr.grammar.v3.ANTLRParser.tokenSpec_return;
 import org.apache.log4j.Logger;
 
 @SuppressWarnings("unchecked")
@@ -173,6 +172,7 @@ public abstract class CommonParser {
     protected void popBag(String bagName) { //
         /* List<NodeValue> list = */valueStack.pop();
     }
+
 
     protected void pushElement() { //
         List<NodeValue> currentParentList = getCurrentParentList();
