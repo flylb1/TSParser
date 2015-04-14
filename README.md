@@ -30,9 +30,10 @@ TSParser has already integrated SPEC listed as below. The main work is to copy s
 
 
 ####2.4 Dynamically load Section/ Descriptor script
-TSParser has both Lexer and Parser, which can help recognize the Section/ Descriptor scripts.  (Thanks [Antlr](http://www.antlr.org/))
+TSParser has both Lexer and Parser, which can help recognize the Section/ Descriptor scripts.  <br>
+(Thanks [Antlr](http://www.antlr.org/))
 
-TSParser translates the scripts into java source code at first, then to compile java code into byte code, finally to dynamically load byte code into JVM at runtime. (Thanks [Janino](http://docs.codehaus.org/display/JANINO/Home))
+TSParser translates the scripts into java source code at first, then to compile java code into byte code, finally to dynamically load byte code into JVM at runtime. <br>(Thanks [Janino](http://docs.codehaus.org/display/JANINO/Home))
 
 ####2.5 Friendly presentation of Section/Descriptor 
 For a specific section, TSParser has three methods to show the section/descriptor data.
