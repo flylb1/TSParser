@@ -27,6 +27,7 @@ TSParser has already integrated SPEC listed as below. The main work is to copy s
   * DTG D-Book
   * [ETSI TR 101 202](http://www.etsi.org/deliver/etsi_tr/101200_101299/101202/01.02.01_60/tr_101202v010201p.pdf)
   * Polsat_stb
+  * DVB-SI Extension For TURKSAT
 
 
 ####2.4 Dynamically load Section/ Descriptor script
@@ -56,8 +57,22 @@ There are 3 build-in applications in TSParser:
 
 
 ###3 Run and Build
-Please see file "HowToRun" for detail
+Please ensure jre1.6 or above is intalled.<br>
+```bash
+java -version
+```
 
+Run from command:
+```bash
+cd TSP_DIST
+java -jar jetty-runner-8.1.9.v20130131.jar --port 8080  TSP.war
+```
+Or you can Run startup.bat or startup.sh base on your OS
+
+When you see console output "AbstractConnector:Started SelectChannelConnector@0.0.0.0:8080"
+That mean program started, using browse visitor "http://localhost:8080/TSP"
+
+Run from eclipse RAP IDE please see file "HowToRun" for detail
 
 ###4 LICENSE
 TSParser is licensed under the [Apache 2 License](http://www.apache.org/licenses/LICENSE-2.0.html), which means user can use it for free, and without strings attached in commercial or non-commercial projects. 
