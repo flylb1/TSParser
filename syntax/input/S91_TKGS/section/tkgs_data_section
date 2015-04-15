@@ -1,14 +1,14 @@
 tkgs_data_section(){
 	NODE_START tkgs_info
-	reserved									4	bslbf
-	tkgs_info_descriptors_length				12	uimbf
+	reserved	4	bslbf
+	tkgs_info_descriptors_length	12	uimbf
 	for(i=0;i<N;i++){
 		descriptor()
 	}
 	NODE_END tkgs_info
 	
-	reserved									4	bslbf
-	broadcast_source_loop_length				20	uimsbf
+	reserved						4	bslbf
+	broadcast_source_loop_length	20	uimsbf
 	for (i=0; i<broadcast_source_loop_length; i++)/*broadcast_source_loops*/{		
 		broadcast_source_descriptors_length		8 uimsbf
 		for(i=0;i<broadcast_source_descriptors_length;i++){
@@ -23,21 +23,75 @@ tkgs_data_section(){
 			}
 			
 			for (i=0; i<N; i++)/*service_lists*/{
-				read_sdt_table_id				8	uimsbf
-				rewind(8)
-				
-				if(read_sdt_table_id == 0x42){
-					CALL S20_300468.section.service_description_section
-				}else{
-					break
+				sdt_table_id						8	uimsbf
+				if(sdt_table_id == 0x42){
+					section_syntax_indicator 		1 bslbf
+					reserved_future_use 			1 bslbf
+					reserved 						2 bslbf
+					section_length 					12 uimsbf
+					transport_stream_id 			16 uimsbf
+					reserved 						2 bslbf
+					version_number 					5 uimsbf
+					current_next_indicator 			1 bslbf
+					section_number 					8 uimsbf
+					last_section_number 			8 uimsbf
+					original_network_id 			16 uimsbf
+					reserved_future_use 			8 bslbf
+					for (i=0;i<section_length-12;i++)/*services*/{
+						service_id 16 				uimsbf
+						reserved_future_use 		6 bslbf
+						EIT_schedule_flag 			1 bslbf
+						EIT_present_following_flag 	1 bslbf
+						running_status 				3 uimsbf
+						free_CA_mode 				1 bslbf
+						descriptors_loop_length 	12 uimsbf
+						for (j=0;j<N;j++){
+							descriptor()
+						}
+					}
+					CRC_32 32 rpchof
+					
+					read_next_sdt_table_id			8	uimsbf
+					rewind(8)
+					if(read_next_sdt_table_id != 0x42){
+						break
+					}
 				}
 			}
 			
 			program_loop_length					16	uimbsf
 			for (i=0; i<program_loop_length; i++)/*programs*/{		
-				reserved 						3 uimsbf
-				tkgs_service_locator 			13 uimsbf
-				CALL S10_13818.section.TS_program_map_section
+				reserved 					3 uimsbf
+				tkgs_service_locator 		13 uimsbf
+				table_id 					8 uimsbf
+				section_syntax_indicator 	1 bslbf
+				noused 						1 bslbf
+				reserved 					2 bslbf
+				section_length 				12 uimsbf
+				program_number 				16 uimsbf
+				reserved 					2 bslbf
+				version_number 				5 uimsbf
+				current_next_indicator 		1 bslbf
+				section_number 				8 uimsbf
+				last_section_number 		8 uimsbf
+				reserved 					3 bslbf
+				PCR_PID 					13 uimsbf
+				reserved 					4 bslbf
+				program_info_length 		12 uimsbf
+				for (i=0; i<program_info_length; i++) {
+					descriptor()
+				}
+				for (i=0;i<section_length-program_info_length-4-9;i++)/*streams*/ {
+					stream_type 			8 uimsbf
+					reserved 				3 bslbf
+					elementary_PID 			13 uimsnf
+					reserved 				4 bslbf
+					ES_info_length 			12 uimsbf
+					for (i=0; i<ES_info_length; i++) {
+						descriptor()
+					}
+				}
+				CRC_32 32 rpchof
 			}
 		}
 	}	
@@ -45,8 +99,11 @@ tkgs_data_section(){
 	
 	NODE_START service_list_loop
 	service_list_loop_length					20	uimsbf
-		for (i=0; i<service_list_loop_length; i++){		
-			descriptor()
+		for (i=0; i<service_list_loop_length; i++)/*service_lists*/{	
+	                service_list_descriptors_length 16 uimsbf
+                        for (i=0; i<service_list_descriptors_length; i++) {
+			     descriptor()
+                        }
 		}
 	NODE_END service_list_loop
 	
