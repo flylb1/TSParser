@@ -99,8 +99,11 @@ tkgs_data_section(){
 	
 	NODE_START service_list_loop
 	service_list_loop_length					20	uimsbf
-		for (i=0; i<service_list_loop_length; i++){		
-			descriptor()
+		for (i=0; i<service_list_loop_length; i++)/*service_lists*/{	
+	                service_list_descriptors_length 16 uimsbf
+                        for (i=0; i<service_list_descriptors_length; i++) {
+			     descriptor()
+                        }
 		}
 	NODE_END service_list_loop
 	
