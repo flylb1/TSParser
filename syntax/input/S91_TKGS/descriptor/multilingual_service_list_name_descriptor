@@ -1,5 +1,4 @@
 tag=0x93
-tag=0x93
 multilingual_service_list_name_descriptor(){		
 	descriptor_tag			8	uimsbf
 	descriptor_length		8	uimsbf
