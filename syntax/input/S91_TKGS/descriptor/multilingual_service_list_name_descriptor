@@ -1,10 +1,9 @@
 tag=0x93
+tag=0x93
 multilingual_service_list_name_descriptor(){		
 	descriptor_tag			8	uimsbf
 	descriptor_length		8	uimsbf
-	reserved				4	bslbf
-	category_id				12	uimsbf
-	for (i=0;i<descriptor_length-2;i++) {		
+	for (i=0;i<descriptor_length-2;i++)/*names*/ {		
 		ISO_639_language_code	24	bslbf
 		name_length			8	uimsbf
 		for (j=0;j<name_length;j++){		
