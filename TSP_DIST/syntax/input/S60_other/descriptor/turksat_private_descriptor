@@ -1,12 +1,12 @@
 tag=0x83
-turksat_private_descriptor(){ 
-descriptor_tag 8 uimsbf
-descriptor_length 8 uimsbf
-frequency 16 uimsbf
-reserved_future_use 7 uimsbf
-polarization 1 uimsbf
-service_id 16 uimsbf
-LCN 16 uimsbf
-dp_service_id 16 uimsbf
-dp_ts_id 16 uimsbf
+    turksat_private_descriptor(){ 
+    descriptor_tag             8       uimsbf  
+    descriptor_length          8       uimsbf  
+    frequency                  16      uimsbf  
+    reserved_future_use        7       uimsbf  
+    polarization               1       uimsbf  
+    service_id                 16      uimsbf  
+    LCN                        16      uimsbf  
+    dp_service_id              16      uimsbf  
+    dp_ts_id                   16      uimsbf  
 }

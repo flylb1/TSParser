@@ -1,29 +1,29 @@
-program_data_section() {		
-	table_id	8	uimsbf
-	section_syntax_indicator	1	bslbf
-	reserved_future_use	1	bslbf
-	reserved	2	bslbf
-	section_length	12	uimsbf
-	table_id_extension	16	uimsbf
-	reserved	2	bslbf
-	version_number	5	uimsbf
-	current_next_indicator	1	bslbf
-	section_number	8	uimsbf
-	last_section_number	8	uimsbf
-	compression_flag	1	uimsbf
-	reserved	7	uimsbf
-	
-	if (compression_flag == 0)		
-	{		
-		for(i=0;i<N;i++) {		
-			program_information_structure	8 uimsbf	
-		}		
-	}		
-	else		
-	{		
-		for (i=0;i<N;i++) {		
-			compressed_program_information_structures	8 uimsbf	
-		}		
-	}		
-	CRC_32		32 rpchof
-}		
+program_data_section() {        
+    table_id                                                 8       uimsbf  
+    section_syntax_indicator                                 1       bslbf   
+    reserved_future_use                                      1       bslbf   
+    reserved                                                 2       bslbf   
+    section_length                                           12      uimsbf  
+    table_id_extension                                       16      uimsbf  
+    reserved                                                 2       bslbf   
+    version_number                                           5       uimsbf  
+    current_next_indicator                                   1       bslbf   
+    section_number                                           8       uimsbf  
+    last_section_number                                      8       uimsbf  
+    compression_flag                                         1       uimsbf  
+    reserved                                                 7       uimsbf  
+    
+    if (compression_flag == 0)        
+    {        
+        for(i=0;i<N;i++) {        
+            program_information_structure                    8       uimsbf  
+        }        
+    }        
+    else        
+    {        
+        for (i=0;i<N;i++) {        
+            compressed_program_information_structures        8       uimsbf  
+        }        
+    }        
+    CRC_32                                                   32      rpchof  
+}        

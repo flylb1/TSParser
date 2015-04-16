@@ -1,9 +1,9 @@
 tag=0x10
 smoothing_buffer_descriptor() {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	reserved 2 bslbf
-	sb_leak_rate 22 uimsbf
-	reserved 2 bslbf
-	sb_size 22 uimsbf
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    reserved                 2       bslbf   
+    sb_leak_rate             22      uimsbf  
+    reserved                 2       bslbf   
+    sb_size                  22      uimsbf  
 }

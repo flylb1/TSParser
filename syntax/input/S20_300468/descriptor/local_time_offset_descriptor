@@ -1,14 +1,14 @@
 tag=0x58
 local_time_offset_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	for(i=0;i<N;i++)/*time_offsets*/{
-		country_code 24 bslbf
-		country_region_id 6 bslbf
-		reserved 1 bslbf
-		local_time_offset_polarity 1 bslbf
-		local_time_offset 16 bslbf
-		time_of_change 40 bslbf
-		next_time_offset 16 bslbf
-	}
+    descriptor_tag                        8       uimsbf  
+    descriptor_length                     8       uimsbf  
+    for(i=0;i<N;i++)/*time_offsets*/{
+        country_code                      24      bslbf   
+        country_region_id                 6       bslbf   
+        reserved                          1       bslbf   
+        local_time_offset_polarity        1       bslbf   
+        local_time_offset                 16      bslbf   
+        time_of_change                    40      bslbf   
+        next_time_offset                  16      bslbf   
+    }
 }

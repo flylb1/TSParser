@@ -1,10 +1,10 @@
 CA_message_section() {
-	table_id 8 uimsbf
-	section_syntax_indicator 1 bslbf
-	DVB_reserved 1 bslbf
-	ISO_reserved 2 bslbf
-	CA_section_length 12 uimsbf
-	for(i=0; i<N; i++) {
-		CA_data_byte 8 bslbf
-	}
+    table_id                        8       uimsbf  
+    section_syntax_indicator        1       bslbf   
+    DVB_reserved                    1       bslbf   
+    ISO_reserved                    2       bslbf   
+    CA_section_length               12      uimsbf  
+    for(i=0; i<N; i++) {
+        CA_data_byte                8       bslbf   
+    }
 }

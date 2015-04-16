@@ -1,10 +1,10 @@
 tag=0x10
 application_storage_descriptor() {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	storage_property 8 uimsbf
-	not_launchable_from_broadcast 1 bslbf
-	reserved 7 bslbf
-	version 32 uimsbf
-	priority 8 uimsbf
+    descriptor_tag                       8       uimsbf  
+    descriptor_length                    8       uimsbf  
+    storage_property                     8       uimsbf  
+    not_launchable_from_broadcast        1       bslbf   
+    reserved                             7       bslbf   
+    version                              32      uimsbf  
+    priority                             8       uimsbf  
 }

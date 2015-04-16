@@ -1,14 +1,14 @@
 tag=0x92
-multilingual_category_label_descriptor(){		
-	descriptor_tag				8	uimsbf
-	descriptor_length			8	uimsbf
-	reserved					4	bslbf
-	category_id					12	uimsbf
-	for (i=0;i<descriptor_length-2;i++) /*languages*/{		
-		ISO_639_language_code	24	bslbf
-		name_length				8	uimsbf
-		for (j=0;j<name_length;j++){		
-			char				8	bslbf
-		}		
-	}		
-}	
+multilingual_category_label_descriptor(){        
+    descriptor_tag                   8       uimsbf  
+    descriptor_length                8       uimsbf  
+    reserved                         4       bslbf   
+    category_id                      12      uimsbf  
+    for (i=0;i<descriptor_length-2;i++) /*languages*/{        
+        ISO_639_language_code        24      bslbf   
+        name_length                  8       uimsbf  
+        for (j=0;j<name_length;j++){        
+            char                     8       bslbf   
+        }        
+    }        
+}    

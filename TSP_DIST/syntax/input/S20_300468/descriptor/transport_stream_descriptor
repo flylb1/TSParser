@@ -1,8 +1,8 @@
 tag=0x67
 transport_stream_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	for (i=0;i<N;i++){
-		byte 8 uimsbf
-	}
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    for (i=0;i<N;i++){
+        byte                 8       uimsbf  
+    }
 }

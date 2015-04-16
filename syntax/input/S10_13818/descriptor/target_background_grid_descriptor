@@ -1,8 +1,8 @@
 tag=0x7
 target_background_grid_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	horizontal_size 14 uimsbf
-	vertical_size 14 uimsbf
-	aspect_ratio_information 4 uimsbf
+    descriptor_tag                  8       uimsbf  
+    descriptor_length               8       uimsbf  
+    horizontal_size                 14      uimsbf  
+    vertical_size                   14      uimsbf  
+    aspect_ratio_information        4       uimsbf  
 }

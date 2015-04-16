@@ -1,7 +1,7 @@
 tag=0x4f
 time_shifted_event_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	reference_service_id 16 uimsbf
-	reference_event_id 16 uimsbf
+    descriptor_tag              8       uimsbf  
+    descriptor_length           8       uimsbf  
+    reference_service_id        16      uimsbf  
+    reference_event_id          16      uimsbf  
 }

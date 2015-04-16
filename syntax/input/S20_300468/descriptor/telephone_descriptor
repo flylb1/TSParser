@@ -1,30 +1,30 @@
 tag=0x57
 telephone_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	reserved_future_use 2 bslbf
-	foreign_availability 1 bslbf
-	connection_type 5 uimsbf
-	reserved_future_use 1 bslbf
-	country_prefix_length 2 uimsbf
-	international_area_code_length 3 uimsbf
-	operator_code_length 2 uimsbf
-	reserved_future_use 1 bslbf
-	national_area_code_length 3 uimsbf
-	core_number_length 4 uimsbf
-	for (i=0;i<country_prefix_length;i++){
-		country_prefix_char 8 uimsbf
-	}
-	for (i=0;i<international_area_code_length;i++){
-		international_area_code_char 8 uimsbf
-	}
-	for (i=0;i<operator_code_length;i++){
-		operator_code_char 8 uimsbf
-	}
-	for (i=0;i<national_area_code_length;i++){
-		national_area_code_char 8 uimsbf
-	}
-	for (i=0;i<core_number_length;i++){
-		core_number_char 8 uimsbf
-	}
+    descriptor_tag                          8       uimsbf  
+    descriptor_length                       8       uimsbf  
+    reserved_future_use                     2       bslbf   
+    foreign_availability                    1       bslbf   
+    connection_type                         5       uimsbf  
+    reserved_future_use                     1       bslbf   
+    country_prefix_length                   2       uimsbf  
+    international_area_code_length          3       uimsbf  
+    operator_code_length                    2       uimsbf  
+    reserved_future_use                     1       bslbf   
+    national_area_code_length               3       uimsbf  
+    core_number_length                      4       uimsbf  
+    for (i=0;i<country_prefix_length;i++){
+        country_prefix_char                 8       uimsbf  
+    }
+    for (i=0;i<international_area_code_length;i++){
+        international_area_code_char        8       uimsbf  
+    }
+    for (i=0;i<operator_code_length;i++){
+        operator_code_char                  8       uimsbf  
+    }
+    for (i=0;i<national_area_code_length;i++){
+        national_area_code_char             8       uimsbf  
+    }
+    for (i=0;i<core_number_length;i++){
+        core_number_char                    8       uimsbf  
+    }
 }

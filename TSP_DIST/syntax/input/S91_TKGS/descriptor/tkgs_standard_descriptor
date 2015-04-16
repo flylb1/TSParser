@@ -1,6 +1,6 @@
 tag=0x91
-tkgs_standard_descriptor(){		
-	descriptor_tag		8	uimbsf
-	descriptor_length	8	uimbsf
-	interface_version	8	uimbsf
+tkgs_standard_descriptor(){        
+    descriptor_tag           8       uimbsf  
+    descriptor_length        8       uimbsf  
+    interface_version        8       uimbsf  
 }

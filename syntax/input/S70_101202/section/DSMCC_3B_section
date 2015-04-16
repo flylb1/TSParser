@@ -1,17 +1,17 @@
 DSMCC_3B_section() {
-	table_id 8 uimsbf
-	section_syntax_indicator 1 bslbf
-	private_indicator 1 bslbf
-	reserved 2 bslbf
-	dsmcc_section_length 12 uimsbf
-	table_id_extension 16 uimsbf
-	reserved 2 bslbf
-	version_number 5 uimsbf
-	current_next_indicator 1 bslbf
-	section_number 8 uimsbf
-	last_section_number 8 uimsbf
-	for(i=0;i<N;i++) {
-		userNetworkMessage_byte 8 uimsbf
-	}
-	
+    table_id                           8       uimsbf  
+    section_syntax_indicator           1       bslbf   
+    private_indicator                  1       bslbf   
+    reserved                           2       bslbf   
+    dsmcc_section_length               12      uimsbf  
+    table_id_extension                 16      uimsbf  
+    reserved                           2       bslbf   
+    version_number                     5       uimsbf  
+    current_next_indicator             1       bslbf   
+    section_number                     8       uimsbf  
+    last_section_number                8       uimsbf  
+    for(i=0;i<N;i++) {
+        userNetworkMessage_byte        8       uimsbf  
+    }
+    
 }

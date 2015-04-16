@@ -1,13 +1,13 @@
 tag=0xb
 application_icons_descriptor() {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	icon_locator_length 8 uimsbf
-	for (i=0; i<N; i++) {
-		icon_locator_byte 8 uimsbf
-	}
-	icon_flags 16 bslbf
-	for (i=0; i<N; i++) {
-		reserved_future_use 8 bslbf
-	}
+    descriptor_tag                 8       uimsbf  
+    descriptor_length              8       uimsbf  
+    icon_locator_length            8       uimsbf  
+    for (i=0; i<N; i++) {
+        icon_locator_byte          8       uimsbf  
+    }
+    icon_flags                     16      bslbf   
+    for (i=0; i<N; i++) {
+        reserved_future_use        8       bslbf   
+    }
 }

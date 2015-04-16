@@ -1,8 +1,8 @@
 tag=0x71
 service_identifier_descriptor () {
-	descriptor_tag 8 uimsbf 
-	descriptor_length 8 uimsbf
-	for (i = 0; i < descriptor_length; i++) {
-		textual_service_identifier_bytes 8 uimsbf
-	}
+    descriptor_tag                              8       uimsbf  
+    descriptor_length                           8       uimsbf  
+    for (i = 0; i < descriptor_length; i++) {
+        textual_service_identifier_bytes        8       uimsbf  
+    }
 }

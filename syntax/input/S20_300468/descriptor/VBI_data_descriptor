@@ -1,26 +1,26 @@
 tag=0x45
 VBI_data_descriptor() {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	for (i=0; i<N; i++)/*data_services*/ {
-		data_service_id 8 uimsbf
-		data_service_descriptor_length 8 uimsbf
-		if (data_service_id==0x01 ||
-			data_service_id==0x02 ||
-			data_service_id==0x04 ||
-			data_service_id==0x05 ||
-			data_service_id==0x06 ||
-			data_service_id==0x07) {
-			for (i=0; i<data_service_descriptor_length; i++)/*fields*/ {
-				reserved 2 bslbf
-				field_parity 1 bslbf
-				line_offset 5 uimsbf
-			}
-		} 
-		else {
-			for (i=0; i<N; i++) {
-				reserved 8 bslbf
-			}
-		}
-	}
+    descriptor_tag                            8       uimsbf  
+    descriptor_length                         8       uimsbf  
+    for (i=0; i<N; i++)/*data_services*/ {
+        data_service_id                       8       uimsbf  
+        data_service_descriptor_length        8       uimsbf  
+        if (data_service_id==0x01 ||
+            data_service_id==0x02 ||
+            data_service_id==0x04 ||
+            data_service_id==0x05 ||
+            data_service_id==0x06 ||
+            data_service_id==0x07) {
+            for (i=0; i<data_service_descriptor_length; i++)/*fields*/ {
+                reserved                      2       bslbf   
+                field_parity                  1       bslbf   
+                line_offset                   5       uimsbf  
+            }
+        } 
+        else {
+            for (i=0; i<N; i++) {
+                reserved                      8       bslbf   
+            }
+        }
+    }
 }

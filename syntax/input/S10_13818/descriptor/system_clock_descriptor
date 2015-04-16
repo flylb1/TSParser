@@ -1,10 +1,10 @@
 tag=0xB
 system_clock_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	external_clock_reference_indicator 1 bslbf
-	reserved 1 bslbf
-	clock_accuracy_integer 6 uimsbf
-	clock_accuracy_exponent 3 uimsbf
-	reserved 5 bslbf
+    descriptor_tag                            8       uimsbf  
+    descriptor_length                         8       uimsbf  
+    external_clock_reference_indicator        1       bslbf   
+    reserved                                  1       bslbf   
+    clock_accuracy_integer                    6       uimsbf  
+    clock_accuracy_exponent                   3       uimsbf  
+    reserved                                  5       bslbf   
 }

@@ -1,16 +1,16 @@
 tag=0x06
 supplementary_audio_descriptor() {
-	descriptor_tag 8 uimbsf
-	descriptor_length 8 uimbsf
-	descriptor_tag_extension 8 uimbsf
-	mix_type 1 uimbsf
-	editorial_classification 5 uimbsf
-	reserved 1 uimbsf
-	language_code_present 1 uimbsf
-	if (language_code_present == 1) {
-		ISO_639_language_code 24 bslbf
-	}
-	for (i=0;i<N;i++) {
-		private_data_byte 8 uimbsf
-	}
+    descriptor_tag                   8       uimbsf  
+    descriptor_length                8       uimbsf  
+    descriptor_tag_extension         8       uimbsf  
+    mix_type                         1       uimbsf  
+    editorial_classification         5       uimbsf  
+    reserved                         1       uimbsf  
+    language_code_present            1       uimbsf  
+    if (language_code_present == 1) {
+        ISO_639_language_code        24      bslbf   
+    }
+    for (i=0;i<N;i++) {
+        private_data_byte            8       uimbsf  
+    }
 }

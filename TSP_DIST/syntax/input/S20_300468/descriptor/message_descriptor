@@ -1,11 +1,11 @@
 tag=0x08
 message_descriptor (){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	descriptor_tag_extension 8 uimsbf
-	message_id 8 uimsbf
-	ISO_639_language_code 24 bslbf
-	for (j=0;j<N;j++) {
-		text_char 8 uimsbf
-	}
+    descriptor_tag                  8       uimsbf  
+    descriptor_length               8       uimsbf  
+    descriptor_tag_extension        8       uimsbf  
+    message_id                      8       uimsbf  
+    ISO_639_language_code           24      bslbf   
+    for (j=0;j<N;j++) {
+        text_char                   8       uimsbf  
+    }
 }

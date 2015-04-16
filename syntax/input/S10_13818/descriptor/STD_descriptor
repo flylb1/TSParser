@@ -1,7 +1,7 @@
 tag=0x11
 STD_descriptor () {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	reserved 7 bslbf
-	leak_valid_flag 1 bslbf
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    reserved                 7       bslbf   
+    leak_valid_flag          1       bslbf   
 }

@@ -1,11 +1,11 @@
 tag=0x56
 teletext_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	for (i=0;i<N;i++)/*teletexts*/{
-		ISO_639_language_code 24 bslbf
-		teletext_type 5 uimsbf
-		teletext_magazine_number 3 uimsbf
-		teletext_page_number 8 uimsbf
-	}
+    descriptor_tag                      8       uimsbf  
+    descriptor_length                   8       uimsbf  
+    for (i=0;i<N;i++)/*teletexts*/{
+        ISO_639_language_code           24      bslbf   
+        teletext_type                   5       uimsbf  
+        teletext_magazine_number        3       uimsbf  
+        teletext_page_number            8       uimsbf  
+    }
 }

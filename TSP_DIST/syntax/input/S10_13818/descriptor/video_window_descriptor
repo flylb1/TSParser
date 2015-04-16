@@ -1,8 +1,8 @@
 tag=0x8
 video_window_descriptor() {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	horizontal_offset 14 uimsbf
-	vertical_offset 14 uimsbf
-	window_priority 4 uimsbf
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    horizontal_offset        14      uimsbf  
+    vertical_offset          14      uimsbf  
+    window_priority          4       uimsbf  
 }

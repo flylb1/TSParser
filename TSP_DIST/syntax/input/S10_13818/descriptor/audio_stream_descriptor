@@ -1,10 +1,10 @@
 tag=0x3
 audio_stream_descriptor(){
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	free_format_flag 1 bslbf
-	ID 1 bslbf
-	layer 2 bslbf
-	variable_rate_audio_indicator 1 bslbf
-	reserved 3 bslbf
+    descriptor_tag                       8       uimsbf  
+    descriptor_length                    8       uimsbf  
+    free_format_flag                     1       bslbf   
+    ID                                   1       bslbf   
+    layer                                2       bslbf   
+    variable_rate_audio_indicator        1       bslbf   
+    reserved                             3       bslbf   
 }

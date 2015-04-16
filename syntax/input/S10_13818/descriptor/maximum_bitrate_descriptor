@@ -1,8 +1,8 @@
 tag=0xE
 maximum_bitrate_descriptor() {
-	descriptor_tag 8 uimsbf
-	descriptor_length 8 uimsbf
-	reserved 2 bslbf
-	maximum_bitrate 22 uimsbf
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    reserved                 2       bslbf   
+    maximum_bitrate          22      uimsbf  
 }
 
