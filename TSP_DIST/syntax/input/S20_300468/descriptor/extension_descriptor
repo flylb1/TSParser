@@ -1,0 +1,9 @@
+tag=0x7f
+extension_descriptor(){
+    descriptor_tag                  8       uimsbf  
+    descriptor_length               8       uimsbf  
+    descriptor_tag_extension        8       uimsbf  
+    for (i=0;i<N;i++){
+        selector_byte               8       bslbf   
+    }
+}

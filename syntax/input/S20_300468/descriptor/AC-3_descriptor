@@ -1,0 +1,25 @@
+tag=0x6a
+AC-3_descriptor(){
+    descriptor_tag                  8       uimsbf  
+    descriptor_length               8       uimsbf  
+    component_type_flag             1       bslbf   
+    bsid_flag                       1       bslbf   
+    mainid_flag                     1       bslbf   
+    asvc_flag                       1       bslbf   
+    reserved_flags                  4       bslbf   
+    if (component_type_flag == 1){ 
+        component_type              8       uimsbf  
+    }
+    if (bsid_flag == 1){
+        bsid                        8       uimsbf  
+    }
+    if (mainid_flag == 1){
+        mainid                      8       uimsbf  
+    }
+    if (asvc_flag == 1){
+        asvc                        8       uimsbf  
+    }
+    for(i=0;i<N;i++){
+        additional_info_byte        8       uimsbf  
+    }
+}

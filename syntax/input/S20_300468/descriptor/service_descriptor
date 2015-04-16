@@ -1,0 +1,14 @@
+tag=0x48
+service_descriptor(){
+    descriptor_tag                      8       uimsbf  
+    descriptor_length                   8       uimsbf  
+    service_type                        8       uimsbf  
+    service_provider_name_length        8       uimsbf  
+    for (i=0;i<N;I++){
+        service_provider_name           8       uimsbf  
+    }
+    service_name_length                 8       uimsbf  
+    for (i=0;i<N;I++){
+        service_name                    8       uimsbf  
+    }
+}

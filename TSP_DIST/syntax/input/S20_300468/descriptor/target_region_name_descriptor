@@ -1,0 +1,22 @@
+tag=0xFF
+target_region_name_descriptor(){
+    descriptor_tag                          8       uimsbf  
+    descriptor_length                       8       uimsbf  
+    descriptor_tag_extension                8       uimsbf  
+    country_code                            24      bslbf   
+    ISO_639_language_code                   24      bslbf   
+    for (i=0;i<N;i++)/*regions*/{
+        region_depth                        2       bslbf   
+        region_name_length                  6       bslbf   
+        for (j=0;j<M;j++){
+            text_char                       8       uimsbf  
+        }
+        primary_region_code                 8       bslbf   
+        if (region_depth >=2){
+            secondary_region_code           8       bslbf   
+            if (region_depth==3){
+                tertiary_region_code        16      bslbf   
+            }
+        }
+    }
+}

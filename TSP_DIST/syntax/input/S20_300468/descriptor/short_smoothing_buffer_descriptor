@@ -1,0 +1,10 @@
+tag=0x61
+short_smoothing_buffer_descriptor(){
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    sb_size                  2       uimsbf  
+    sb_leak_rate             6       uimsbf  
+    for (i=0;i<N;i++){
+        DVB_reserved         8       bslbf   
+    }
+}

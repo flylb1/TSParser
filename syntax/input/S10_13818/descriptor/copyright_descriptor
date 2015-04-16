@@ -1,0 +1,9 @@
+tag=0xD
+copyright_descriptor() {
+    descriptor_tag                       8       uimsbf  
+    descriptor_length                    8       uimsbf  
+    copyright_identifier                 32      uimsbf  
+    for (i = 0; i < N ; i++ ){
+        additional_copyright_info        8       bslbf   
+    }
+}

@@ -1,0 +1,10 @@
+tag=0x62
+frequency_list_descriptor(){
+    descriptor_tag              8       uimsbf  
+    descriptor_length           8       uimsbf  
+    reserved_future_use         6       bslbf   
+    coding_type                 2       bslbf   
+    for (i=0;I<N;i++){
+        centre_frequency        32      uimsbf  
+    }
+}

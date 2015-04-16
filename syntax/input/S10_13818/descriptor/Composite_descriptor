@@ -1,0 +1,12 @@
+tag=0xFF
+Composite_descriptor(){
+    descriptor_tag                   8       uimsbf  
+    descriptor_length                8       uimsbf  
+    for(i=0;i<N;i++)/*sub_descriptors*/{
+        sub_descriptor_tag           8       uimsbf  
+        sub_descriptor_length        8       uimsbf  
+        for ( i=0; i<N; i++) {
+            private_data_byte        8       uimsbf  
+        }
+    }
+}

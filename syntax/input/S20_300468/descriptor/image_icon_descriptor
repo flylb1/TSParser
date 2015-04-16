@@ -1,0 +1,45 @@
+tag=0x0
+image_icon_descriptor() {
+    descriptor_tag                        8       uimsbf  
+    descriptor_length                     8       uimsbf  
+    descriptor_tag_extension              8       uimsbf  
+    descriptor_number                     4       uimsbf  
+    last_descriptor_number                4       uimsbf  
+    reserved_future_use                   5       uimsbf  
+    icon_id                               3       uimsbf  
+    if (descriptor_number == 0x00) {
+        icon_transport_mode               2       uimsbf  
+        position_flag                     1       bslbf   
+        if (position_flag == 0x01) {
+            coordinate_system             3       uimsbf  
+            reserved_future_use           2       bslbf   
+            icon_horizontal_origin        12      uimsbf  
+            icon_vertical_origin          12      uimsbf  
+        }
+        else {
+            reserved_future_use           5       bslbf   
+        }
+        icon_type_length                  8       uimsbf  
+        for (i=0; i< icon_type_length; i++) {
+            icon_type_char                8       uimsbf  
+        }
+        if (icon_transport_mode == 0x00 ) {
+            icon_data_length              8       uimsbf  
+            for (j=0; j<icon_data_length; j++) {
+                icon_data_byte            8       uimsbf  
+            }
+        }
+        else if (icon_transport_mode == 0x01 ) {
+            url_length                    8       uimsbf  
+            for (k=0; k< url_length; k++) {
+                url_char                  8       uimsbf  
+            }
+        }
+    }
+    else {
+        icon_data_length                  8       uimsbf  
+        for (m=0; m<icon_data_length; m++) {
+            icon_data_byte                8       uimsbf  
+        }
+    }
+}

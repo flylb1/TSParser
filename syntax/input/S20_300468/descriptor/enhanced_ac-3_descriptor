@@ -1,0 +1,37 @@
+tag=0x7A
+enhanced_ac-3_descriptor(){
+    descriptor_tag                  8       uimsbf  
+    descriptor_length               8       uimsbf  
+    component_type_flag             1       bslbf   
+    bsid_flag                       1       bslbf   
+    mainid_flag                     1       bslbf   
+    asvc_flag                       1       bslbf   
+    mixinfoexists                   1       bslbf   
+    substream1_flag                 1       bslbf   
+    substream2_flag                 1       bslbf   
+    substream3_flag                 1       bslbf   
+    if (component_type_flag == 1){
+        component_type              8       uimsbf  
+    }
+    if (bsid_flag == 1){
+        bsid                        8       uimsbf  
+    }
+    if (mainid_flag == 1){
+        mainid                      8       uimsbf  
+    }
+    if (asvc_flag == 1){
+        asvc                        8       bslbf   
+    }
+    if (substream1_flag == 1){
+        substream1                  8       uimsbf  
+    }
+    if (substream2_flag == 1){
+        substream2                  8       uimsbf  
+    }
+    if (substream3_flag == 1){
+        substream3                  8       uimsbf  
+    }
+    for (i=0;i<N;i++){
+        additional_info_byte        8       bslbf   
+    }
+}

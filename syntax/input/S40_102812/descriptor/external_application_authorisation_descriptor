@@ -1,0 +1,10 @@
+tag=0x5
+external_application_authorisation_descriptor() {
+    descriptor_tag                  8       uimsbf  
+    descriptor_length               8       uimsbf  
+    for(i=0; i<N; i++)/*applications*/ {
+        organisation_id             32      bslbf   
+        application_id              16      bslbf   
+        application_priority        8       uimsbf  
+    }
+}

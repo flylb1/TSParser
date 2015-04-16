@@ -1,0 +1,12 @@
+tag=0x8
+dvb_html_application_descriptor(){
+    descriptor_tag             8       uimsbf  
+    descriptor_length          8       uimsbf  
+    appid_set_length           8       uimsbf  
+    for(i=0; i<appid_set_length; i++) {
+        application_id         16      bslbf   
+    }
+    for(j=0; j<N; j++) {
+        parameter_bytes        8       uimsbf  
+    }
+}

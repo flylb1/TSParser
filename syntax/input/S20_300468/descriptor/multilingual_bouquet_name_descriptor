@@ -1,0 +1,12 @@
+tag=0x5c
+multilingual_bouquet_name_descriptor(){
+    descriptor_tag                   8       uimsbf  
+    descriptor_length                8       uimsbf  
+    for (i=0;i<N;i++)/*bouquets*/ {
+        ISO_639_language_code        24      bslbf   
+        bouquet_name_length          8       uimsbf  
+        for (j=0;j<N;j++){
+            char                     8       uimsbf  
+        }
+    }
+}

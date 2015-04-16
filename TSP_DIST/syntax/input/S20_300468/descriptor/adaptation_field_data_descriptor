@@ -1,0 +1,6 @@
+tag=0x70
+adaptation_field_data_descriptor(){
+    descriptor_tag                          8       uimsbf  
+    descriptor_length                       8       uimsbf  
+    adaptation_field_data_identifier        8       bslbf   
+}

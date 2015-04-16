@@ -1,0 +1,31 @@
+tag=0x4a
+linkage_descriptor(){
+    descriptor_tag                    8       uimsbf  
+    descriptor_length                 8       uimsbf  
+    transport_stream_id               16      uimsbf  
+    original_network_id               16      uimsbf  
+    service_id                        16      uimsbf  
+    linkage_type                      8       uimsbf  
+    if (linkage_type ==0x08){
+        hand-over_type 4 bslbf
+        reserved_future_use           3       bslbf   
+        origin_type                   1       bslbf   
+        if (hand-over_type ==0x01
+        || hand-over_type ==0x02
+        || hand-over_type ==0x03){
+            network_id                16      uimsbf  
+        }
+        if (origin_type ==0x00){
+            initial_service_id        16      uimsbf  
+        }
+    }
+    if (linkage_type == 0x0D){
+        target_event_id               16      uimsbf  
+        target_listed                 1       bslbf   
+        event_simulcast               1       bslbf   
+        reserved                      6       bslbf   
+    }
+    for (i=0;i<N;i++){
+        private_data_byte             8       bslbf   
+    }
+}

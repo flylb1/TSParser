@@ -1,0 +1,6 @@
+tag=0x52
+stream_identifier_descriptor(){
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    component_tag            8       uimsbf  
+}

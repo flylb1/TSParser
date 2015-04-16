@@ -1,0 +1,16 @@
+tag=0x5d
+multilingual_service_name_descriptor(){
+    descriptor_tag                          8       uimsbf  
+    descriptor_length                       8       uimsbf  
+    for (i=0;i<N;i++)/*services*/ {
+        ISO_639_language_code               24      bslbf   
+        service_provider_name_length        8       uimsbf  
+        for (j=0;j<N;j++){
+            service_provider_name           8       uimsbf  
+        }
+        service_name_length                 8       uimsbf  
+        for (j=0;j<N;j++){
+            service_name                    8       uimsbf  
+        }
+    }
+}

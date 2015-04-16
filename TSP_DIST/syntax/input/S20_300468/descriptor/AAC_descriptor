@@ -1,0 +1,16 @@
+tag=0x7c
+AAC_descriptor(){
+    descriptor_tag                      8       uimsbf  
+    descriptor_length                   8       uimsbf  
+    profile_and_level                   8       uimsbf  
+    if (descriptor_length > 1){
+        AAC_type_flag                   1       bslbf   
+        reserved                        7       bslbf   
+        if (AAC_type_flag == 1){
+            AAC_type                    8       uimsbf  
+        }
+        for(i=0;i<N;i++){
+            additional_info_byte        8       uimsbf  
+        }
+    }
+}

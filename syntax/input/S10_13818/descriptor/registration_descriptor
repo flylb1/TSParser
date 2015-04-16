@@ -1,0 +1,9 @@
+tag=0x5
+registration_descriptor() {
+    descriptor_tag                            8       uimsbf  
+    descriptor_length                         8       uimsbf  
+    format_identifier                         32      uimsbf  
+    for (i = 0; i < N ; i++ ){
+        additional_identification_info        8       bslbf   
+    }
+}

@@ -1,0 +1,6 @@
+tag=0x6
+data_stream_alignment_descriptor() {
+    descriptor_tag           8       uimsbf  
+    descriptor_length        8       uimsbf  
+    alignment_type           8       uimsbf  
+}

@@ -1,0 +1,6 @@
+tag=0x5f
+private_data_specifier_descriptor(){
+    descriptor_tag                8       uimsbf  
+    descriptor_length             8       uimsbf  
+    private_data_specifier        32      uimsbf  
+}

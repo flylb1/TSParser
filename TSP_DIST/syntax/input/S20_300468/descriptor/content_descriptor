@@ -1,0 +1,10 @@
+tag=0x54
+content_descriptor(){
+    descriptor_tag                    8       uimsbf  
+    descriptor_length                 8       uimsbf  
+    for (i=0;i<N;i++)/*contents*/ {
+        content_nibble_level_1        4       uimsbf  
+        content_nibble_level_2        4       uimsbf  
+        user_byte                     8       uimsbf  
+    }
+}
