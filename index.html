@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>TSParser by flylb1</title>
+    <title>TSParserDesktop by flylb1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,18 +11,18 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">TSParser</h1>
+      <h1 class="project-name">TSParserDesktop</h1>
       <h2 class="project-tagline">Java MPEG2 Analyzer</h2>
-      <a href="https://github.com/flylb1/TSParser" class="btn" target="_blank">View on GitHub</a>
-      <a href="https://github.com/flylb1/TSParser/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/flylb1/TSParser/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/flylb1/TSParserDesktop" class="btn" target="_blank">View on GitHub</a>
+      <a href="https://github.com/flylb1/TSParserDesktop/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/flylb1/TSParserDesktop/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
       <h3>
 <a id="1-introduction" class="anchor" href="#1-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Introduction</h3>
 
-<p>TSParser is a powerful cross-platform DVB/ MPEG stream analyzer. 
+<p>TSParserDesktop is a powerful cross-platform DVB/ MPEG stream analyzer. 
 It works well under Windows, Linux, and Mac OS.
 <img src="https://cloud.githubusercontent.com/assets/8717254/6841219/94298906-d3c1-11e4-9fcb-225089ada675.png" alt="introduce"></p>
 
@@ -32,7 +32,7 @@ It works well under Windows, Linux, and Mac OS.
 <h4>
 <a id="21-web-based-application" class="anchor" href="#21-web-based-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1 Web based application</h4>
 
-<p>TSParser is a web-based application. User can install it on a server, and the client will access the application via a browser. 
+<p>TSParserDesktop is a desktop application. User can install it on any platform (Win Linux MacOS). 
 <a href="https://cloud.githubusercontent.com/assets/8717254/6841100/dc949af2-d3bf-11e4-9f97-6208ba18921a.png">Main</a></p>
 
 <h4>
@@ -46,9 +46,9 @@ It works well under Windows, Linux, and Mac OS.
 <h4>
 <a id="23-easy-to-add-new-section-descriptor-syntax" class="anchor" href="#23-easy-to-add-new-section-descriptor-syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3 Easy to add new Section/ Descriptor syntax</h4>
 
-<p>TSParser uses Section/Descriptor syntax to parse sections/ descriptors. It has the ability to let user modify the Section &amp; Descriptor syntax at runtime. Once the syntax is changed, the stream’s analysis result will be updated meanwhile. Syntax files locate under %INSTALL_DIR%\syntax. User can also modify these syntax files outside of the system.</p>
+<p>TSParserDesktop uses Section/Descriptor syntax to parse sections/ descriptors. It has the ability to let user modify the Section &amp; Descriptor syntax at runtime. Once the syntax is changed, the stream’s analysis result will be updated meanwhile. Syntax files locate under %INSTALL_DIR%\syntax. User can also modify these syntax files outside of the system.</p>
 
-<p>TSParser has already integrated SPEC listed as below. The main work is to copy syntax from SPEC and paste it into the application.</p>
+<p>TSParserDesktop has already integrated SPEC listed as below. The main work is to copy syntax from SPEC and paste it into the application.</p>
 
 <ul>
 <li>13818</li>
@@ -63,14 +63,14 @@ It works well under Windows, Linux, and Mac OS.
 <h4>
 <a id="24-dynamically-load-section-descriptor-script" class="anchor" href="#24-dynamically-load-section-descriptor-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4 Dynamically load Section/ Descriptor script</h4>
 
-<p>TSParser has both Lexer and Parser, which can help recognize the Section/ Descriptor scripts.  (Thanks <a href="http://www.antlr.org/">Antlr</a>)</p>
+<p>TSParserDesktop has both Lexer and Parser, which can help recognize the Section/ Descriptor scripts.  (Thanks <a href="http://www.antlr.org/">Antlr</a>)</p>
 
-<p>TSParser translates the scripts into java source code at first, then to compile java code into byte code, finally to dynamically load byte code into JVM at runtime. (Thanks <a href="http://docs.codehaus.org/display/JANINO/Home">Janino</a>)</p>
+<p>TSParserDesktop translates the scripts into java source code at first, then to compile java code into byte code, finally to dynamically load byte code into JVM at runtime. (Thanks <a href="http://docs.codehaus.org/display/JANINO/Home">Janino</a>)</p>
 
 <h4>
 <a id="25-friendly-presentation-of-sectiondescriptor" class="anchor" href="#25-friendly-presentation-of-sectiondescriptor" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.5 Friendly presentation of Section/Descriptor</h4>
 
-<p>For a specific section, TSParser has three methods to show the section/descriptor data.</p>
+<p>For a specific section, TSParserDesktop has three methods to show the section/descriptor data.</p>
 
 <ul>
 <li><a href="https://cloud.githubusercontent.com/assets/8717254/6841486/65445c56-d3c6-11e4-99a0-d1c01e6e5db5.png">Tree view</a></li>
@@ -82,14 +82,14 @@ It works well under Windows, Linux, and Mac OS.
 <h4>
 <a id="26-export-sispi-data-to-file" class="anchor" href="#26-export-sispi-data-to-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.6 Export SI/SPI data to file</h4>
 
-<p>Usually, the size of stream is very large. It costs time to transfer the stream for analysis. TSParser supports a way to export only SI/ PSI data. It can be very useful since the size of SI/ PSI data becomes very small while audio/ video data is ignored. Especially, it makes quite convenient when field try.</p>
+<p>Usually, the size of stream is very large. It costs time to transfer the stream for analysis. TSParserDesktop supports a way to export only SI/ PSI data. It can be very useful since the size of SI/ PSI data becomes very small while audio/ video data is ignored. Especially, it makes quite convenient when field try.</p>
 
 <h4>
 <a id="27-support-3rd-to-add-new-application-in-java" class="anchor" href="#27-support-3rd-to-add-new-application-in-java" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.7 Support 3rd to add new application in Java</h4>
 
-<p>User can write third party applications based on stream data in Java with Java1.5 style. Third party Applications locate in %INSTALL_DIR%/3rd/src. When TSParser startups, these applications will be auto registered into the system.</p>
+<p>User can write third party applications based on stream data in Java with Java1.5 style. Third party Applications locate in %INSTALL_DIR%/3rd/src. When TSParserDesktop startups, these applications will be auto registered into the system.</p>
 
-<p>There are 3 build-in applications in TSParser:</p>
+<p>There are 3 build-in applications in TSParserDesktop:</p>
 
 <ul>
 <li>Service List application base on SDT(Show service list )</li>
@@ -105,7 +105,7 @@ It works well under Windows, Linux, and Mac OS.
 <h3>
 <a id="4-license" class="anchor" href="#4-license" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 LICENSE</h3>
 
-<p>TSParser is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 License</a>, which means user can use it for free, and without strings attached in commercial or non-commercial projects. </p>
+<p>TSParserDesktop is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 License</a>, which means user can use it for free, and without strings attached in commercial or non-commercial projects. </p>
 
 <h3>
 <a id="5-explanation" class="anchor" href="#5-explanation" aria-hidden="true"><span class="octicon octicon-link"></span></a>5 Explanation</h3>
@@ -125,7 +125,7 @@ It works well under Windows, Linux, and Mac OS.
 </p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/flylb1/TSParser" target="_blank">TSParser</a> is maintained by <a href="https://github.com/flylb1" target="_blank">flylb1</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/flylb1/TSParserDesktop" target="_blank">TSParserDesktop</a> is maintained by <a href="https://github.com/flylb1" target="_blank">flylb1</a>.</span>
         <!--
         <span class="site-footer-owner"><a href="http://flylbblog.duapp.com/" target="_blank">Bin's Blog</a> </span>
         -->
