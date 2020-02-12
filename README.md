@@ -1,9 +1,9 @@
 ### 1 LICENSE
 
 
-TSParser is licensed under the [Apache 2 License](http://www.apache.org/licenses/LICENSE-2.0.html), which means user can use it for free, and without strings attached in commercial or non-commercial projects except Mediatek(https://www.mediatek.com/). 
+TSParser is licensed under the [Apache 2 License](http://www.apache.org/licenses/LICENSE-2.0.html), which means user can use it for free, and without strings attached in commercial or non-commercial projects except [Mediatek](https://www.mediatek.com/). 
 
-Mediatek(https://www.mediatek.com/) and its subsidiaries prohibit the use of this open source software.
+[Mediatek](https://www.mediatek.com/) and its subsidiaries forbidden to use this software.
 
 
 ### 2 Introduction
